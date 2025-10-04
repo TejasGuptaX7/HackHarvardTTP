@@ -13,9 +13,6 @@ const navLinks: NavLink[] = [
   { href: "/#work", label: "Map" },
   { href: "/#services", label: "Features" },
   { href: "/#benefits", label: "Solutions" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/blog", label: "Resources" },
-  { href: "mailto:hi@greenpulse.ai", label: "Contact" },
 ];
 
 export default function HeaderNavigation() {
@@ -45,7 +42,6 @@ export default function HeaderNavigation() {
           }
         `}>
           <div className="relative">
-            {/* Subtle gradient overlay for depth - only when scrolled */}
             {scrolled && (
               <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-full pointer-events-none" />
             )}
@@ -54,7 +50,7 @@ export default function HeaderNavigation() {
               {/* Logo */}
               <Link href="/" aria-label="Go to homepage" className="flex items-center">
                 <span className="text-2xl font-bold font-poppins tracking-tight text-[#D4FF5C] transition-colors duration-700">
-                  GreenPulse
+                  CarbonCompass
                 </span>
               </Link>
 
@@ -79,16 +75,6 @@ export default function HeaderNavigation() {
 
               {/* Right Side - Login & CTA */}
               <div className="hidden items-center gap-6 lg:flex">
-                <Link
-                  href="/login"
-                  className={`font-poppins text-[15px] font-bold transition-all duration-700 ${
-                    scrolled 
-                      ? 'text-[#D4FF5C] hover:text-white' 
-                      : 'text-[#D4FF5C] hover:text-white'
-                  }`}
-                >
-                  Login
-                </Link>
                 <Link
                   href="/Mapbox"
                   className={`rounded-full px-6 py-2.5 font-manrope text-[15px] font-medium transition-all duration-700 ${

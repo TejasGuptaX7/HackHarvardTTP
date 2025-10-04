@@ -2,13 +2,11 @@
 
 import dynamic from "next/dynamic";
 
-const MapView = dynamic(() => import("../../components/MapView"), { ssr: false });
 const ChatBot = dynamic(() => import("../../components/ChatBot"), { ssr: false });
 
 export default function HomePage() {
   return (
-    <main className="h-full w-full relative">
-      <MapView />
+    <main className="relative bg-white h-screen w-screen">
       <ChatBot />
     </main>
   );

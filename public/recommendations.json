@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-10-04T23:16:37.748Z",
+  "recommendations": [
+    {
+      "buildingId": 51,
+      "reason": "One Kendall Square Building 100 has a high walkability score and proximity to public transportation.",
+      "score": 75,
+      "address": "One Kendall Square Building 100",
+      "district": "Kendall Square"
+    },
+    {
+      "buildingId": 93,
+      "reason": "One Kendall Square Building 300 has a high walkability score and proximity to public transportation.",
+      "score": 77,
+      "address": "One Kendall Square Building 300",
+      "district": "Kendall Square"
+    },
+    {
+      "buildingId": 21,
+      "reason": "121 Hampshire Street has a moderate walkability score and proximity to public transportation.",
+      "score": 71,
+      "address": "121 Hampshire Street",
+      "district": "Smaller Districts"
+    },
+    {
+      "buildingId": 62,
+      "reason": "21 Prospect Street has a high walkability score and proximity to public transportation.",
+      "score": 80,
+      "address": "21 Prospect Street",
+      "district": "Central Square"
+    },
+    {
+      "buildingId": 50,
+      "reason": "50 Binney Street has a high walkability score and proximity to public transportation.",
+      "score": 75,
+      "address": "1689 Massachusetts Avenue",
+      "district": "Lower Massachusetts Ave"
+    },
+    {
+      "buildingId": 79,
+      "reason": "1055 Cambridge Street has a moderate walkability score and proximity to public transportation.",
+      "score": 70,
+      "address": "144 Morgan Avenue, Retail 1",
+      "district": "East Cambridge"
+    }
+  ]
+}

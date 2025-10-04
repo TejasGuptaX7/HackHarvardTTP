@@ -1,0 +1,9 @@
+{
+  "name": "environmental-score",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-10-04",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+	"GEMINI_API_KEY": "AIzaSyCk1-EHRzXKs84cAQJlynIdILNWxGqKNkU"
+  }
+}
