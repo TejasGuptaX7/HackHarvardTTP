@@ -27,10 +27,10 @@ const FinalCta: React.FC = () => {
           Join hundreds of entrepreneurs making smarter, sustainable location decisions.
         </p>
         <Link
-          href="/get-started"
+          href="/Mapbox"
           className="mt-10 inline-block rounded-full bg-primary py-[18px] px-12 text-lg font-bold text-primary-foreground transition-all duration-300 ease-in-out hover:scale-[1.03] hover:brightness-105"
         >
-          Find Your Spot
+          Try Demo
         </Link>
       </div>
     </section>

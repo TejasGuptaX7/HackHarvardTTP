@@ -45,7 +45,6 @@ const VideoHeroSection = () => {
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
-          style={{ imageRendering: 'high-quality' }}
         >
           <source src="/city-animation.mp4" type="video/mp4" />
           <source src="/city-animation.webm" type="video/webm" />
@@ -184,14 +183,12 @@ const HeroSection = () => {
              >
                Start Assessment
              </Link>
-             <a
-               href="/demo"
-               target="_blank"
-               rel="noopener noreferrer"
+             <Link
+               href="/Mapbox"
                className="bg-transparent text-white border border-white font-inter font-semibold text-base py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white hover:text-[#0D3028] w-full sm:w-auto text-center"
              >
                View Demo
-             </a>
+             </Link>
           </div>
         </div>
       </section>

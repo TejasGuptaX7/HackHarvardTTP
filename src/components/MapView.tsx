@@ -5,7 +5,10 @@ import mapboxgl, { Map } from "mapbox-gl";
 import { createRoot } from "react-dom/client";
 import { MdLocationOn } from "react-icons/md";
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
+const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN as string;
+console.log('Mapbox token:', mapboxToken ? 'Present' : 'Missing');
+console.log('Token value:', mapboxToken);
+mapboxgl.accessToken = mapboxToken;
 
 export default function MapView() {
     const mapContainer = useRef<HTMLDivElement>(null);
@@ -15,16 +18,21 @@ export default function MapView() {
         if (!mapContainer.current) return;
         if (map.current) return;
 
-        map.current = new mapboxgl.Map({
-            container: mapContainer.current,
-            style: "mapbox://styles/mapbox/standard",
-            center: [-71.1183, 42.3731],
-            zoom: 17,
-            pitch: 65,
-            bearing: -20,
-            antialias: true,
-            attributionControl: false,
-        });
+        try {
+            map.current = new mapboxgl.Map({
+                container: mapContainer.current,
+                style: "mapbox://styles/mapbox/standard",
+                center: [-71.1183, 42.3731],
+                zoom: 17,
+                pitch: 65,
+                bearing: -20,
+                antialias: true,
+                attributionControl: false,
+            });
+        } catch (error) {
+            console.error('Error creating Mapbox map:', error);
+            return;
+        }
 
         map.current.on("load", () => {
             map.current!.addSource("mapbox-dem", {

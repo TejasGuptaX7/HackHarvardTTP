@@ -90,7 +90,7 @@ export default function HeaderNavigation() {
                   Login
                 </Link>
                 <Link
-                  href="/get-started"
+                  href="/Mapbox"
                   className={`rounded-full px-6 py-2.5 font-manrope text-[15px] font-medium transition-all duration-700 ${
                     scrolled 
                       ? 'bg-white text-[#0D3028] hover:bg-[#D4FF5C] hover:scale-105 hover:shadow-lg' 
@@ -157,11 +157,11 @@ export default function HeaderNavigation() {
               </Link>
             ))}
             <Link
-              href="/get-started"
+              href="/Mapbox"
               onClick={() => setIsOpen(false)}
               className="mt-6 w-full rounded-full bg-[#D4FF5C] text-[#0D3028] py-3 text-center font-manrope text-lg font-medium transition-all hover:bg-white hover:scale-[1.02]"
             >
-              Book a call
+              Try Demo
             </Link>
           </nav>
         </div>
