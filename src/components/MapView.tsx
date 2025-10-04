@@ -243,7 +243,7 @@ export default function MapView() {
 
                         popup.appendChild(headerText);
 
-                        // Function to call OpenAI API for environmental analysis
+                        // Function to call Gemini API for environmental analysis
                         const analyzeLocation = async (location: any, modelType: string, buildingProps: Record<string, any>) => {
                             try {
                                 console.log('Starting environmental analysis for:', { location, modelType, buildingProps });
@@ -1421,7 +1421,7 @@ export default function MapView() {
 
                             document.body.appendChild(modal);
 
-                            // Call OpenAI API to analyze the location
+                            // Call Gemini API to analyze the location
                             const analysis = await analyzeLocation(e.lngLat, label, buildingProps);
                             
                             // Complete progress bar

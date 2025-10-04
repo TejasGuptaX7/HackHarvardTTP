@@ -6,8 +6,8 @@ export async function POST(request: NextRequest) {
     const { location, modelType, buildingData } = await request.json();
     console.log('API Route: Received data:', { location, modelType, buildingData });
 
-    if (!process.env.OPENAI_API_KEY) {
-      console.log('API Route: No OpenAI API key found, using fallback data');
+    if (!process.env.GEMINI_API_KEY) {
+      console.log('API Route: No Gemini API key found, using fallback data');
       // Return fallback data immediately if no API key
       const fallbackAnalysis = {
         populationData: {
@@ -179,35 +179,38 @@ Provide a comprehensive analysis in the following JSON format with SPECIFIC, REA
 
 IMPORTANT: Provide specific, realistic values for every single field. Do not use "N/A", "Not available", or similar placeholder text. Use actual estimates based on the location and typical Boston neighborhood characteristics.`;
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GEMINI_API_KEY}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4',
-        messages: [
+        contents: [
           {
-            role: 'system',
-            content: 'You are an expert environmental consultant and urban planning specialist with deep knowledge of sustainable business practices, carbon footprint analysis, and community development. You provide detailed, data-driven analysis with specific metrics and actionable recommendations.'
-          },
-          {
-            role: 'user',
-            content: prompt
+            parts: [
+              {
+                text: `You are an expert environmental consultant and urban planning specialist with deep knowledge of sustainable business practices, carbon footprint analysis, and community development. You provide detailed, data-driven analysis with specific metrics and actionable recommendations.
+
+${prompt}`
+              }
+            ]
           }
         ],
-        temperature: 0.7,
-        max_tokens: 2000
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 2000,
+          topP: 0.8,
+          topK: 10
+        }
       })
     });
 
     if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.statusText}`);
+      throw new Error(`Gemini API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    const analysisText = data.choices[0].message.content;
+    const analysisText = data.candidates[0].content.parts[0].text;
 
     // Try to parse the JSON response
     let analysis;
