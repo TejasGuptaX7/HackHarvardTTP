@@ -1,0 +1,17 @@
+name = "eco-spirit-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "eco-spirit-data"
+preview_bucket_name = "eco-spirit-data-dev"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "eco_spirit_chat"
+database_id = "270ef314-9987-4849-a8f6-6a6130ee792c"
+preview_database_id = "08ec738d-9223-42b3-a70b-503c2af15644"
+
+[ai]
+binding = "AI"
