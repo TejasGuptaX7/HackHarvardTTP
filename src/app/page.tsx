@@ -1,6 +1,5 @@
 import HeaderNavigation from "@/components/sections/header-navigation";
 import HeroSection, { VideoHeroSection } from "@/components/sections/hero-section";
-
 import ServicesMarquee from "@/components/sections/services-marquee";
 import MembershipBenefits from "@/components/sections/membership-benefits";
 import ServicesDetailed from "@/components/sections/services-detailed";

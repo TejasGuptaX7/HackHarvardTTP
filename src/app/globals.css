@@ -228,3 +228,28 @@
 nextjs-portal {
   display: none !important;
 }
+
+/* Mapbox specific styles */
+.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+/* Custom popup styling */
+.mapboxgl-popup-content {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 18px !important;
+  color: #6b7280 !important;
+  padding: 8px !important;
+}
+
+.mapboxgl-popup-close-button:hover {
+  color: #374151 !important;
+}
