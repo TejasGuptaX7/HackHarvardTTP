@@ -243,15 +243,19 @@ export default function MapView() {
                             height: 100vh;
                             padding: 18px;
                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                            background: #f8f9fb;           /* neutral background */
-                            color: #111827;
-                            border-right: 1px solid #e6e9ee;
+                            background: rgba(248, 249, 251, 0.1);  /* nearly transparent background */
+                            backdrop-filter: blur(15px);           /* subtle glass blur effect */
+                            -webkit-backdrop-filter: blur(15px);   /* Safari support */
+                            color: #1f2937;
+                            border-right: 1px solid rgba(230, 233, 238, 0.2);
                             z-index: 1000;
                             display: flex;
                             flex-direction: column;
                             gap: 12px;
                             overflow-y: auto;             /* keep the map popup narrow but readable */
                             box-sizing: border-box;
+                            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 
+                                       0 8px 32px rgba(0, 0, 0, 0.1);
                         `;
 
                         // Add close button
@@ -265,8 +269,10 @@ export default function MapView() {
                             height: 32px;
                             border: none;
                             border-radius: 50%;
-                            background: rgba(255, 255, 255, 0.2);
-                            color: white;
+                            background: rgba(255, 255, 255, 0.25);
+                            backdrop-filter: blur(12px);
+                            -webkit-backdrop-filter: blur(12px);
+                            color: #374151;
                             font-size: 20px;
                             font-weight: 300;
                             cursor: pointer;
@@ -275,18 +281,23 @@ export default function MapView() {
                             justify-content: center;
                             z-index: 1001;
                             transition: all 0.2s ease;
-                            backdrop-filter: blur(4px);
-                            border: 1px solid rgba(255, 255, 255, 0.15);
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 
+                                       inset 0 1px 0 rgba(255, 255, 255, 0.4);
                         `;
 
                         closeButton.addEventListener('mouseenter', () => {
-                            closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+                            closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.35)';
+                            closeButton.style.borderColor = 'rgba(255, 255, 255, 0.5)';
                             closeButton.style.transform = 'scale(1.05)';
+                            closeButton.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)';
                         });
 
                         closeButton.addEventListener('mouseleave', () => {
-                            closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                            closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+                            closeButton.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                             closeButton.style.transform = 'scale(1)';
+                            closeButton.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)';
                         });
 
                         closeButton.addEventListener('click', () => {
@@ -299,15 +310,20 @@ export default function MapView() {
                         const headerText = document.createElement('div');
                         headerText.style.cssText = `
                             text-align: center;
-                            color: white;
+                            color: #1f2937;
                             font-size: 20px;
-                            font-weight: 500;
+                            font-weight: 600;
                             margin-bottom: 24px;
                             margin-top: 8px;
                             padding: 0 50px 0 10px;
-                            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+                            text-shadow: 0 2px 8px rgba(255,255,255,0.8);
                             line-height: 1.3;
                             letter-spacing: 0.3px;
+                            background: rgba(255, 255, 255, 0.8);
+                            backdrop-filter: blur(10px);
+                            -webkit-backdrop-filter: blur(10px);
+                            border-radius: 12px;
+                            padding: 16px;
                         `;
                         headerText.textContent = 'Select a general category of the type of business';
 
