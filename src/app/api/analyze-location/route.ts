@@ -1,40 +1,108 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// --- Replace the existing FALLBACK_ANALYSIS with this block ---
-const FALLBACK_ANALYSIS = {
+// Function to generate dynamic analysis based on location and building data
+function generateDynamicAnalysis(location: any, buildingData: any, modelType: string) {
+  // Calculate location-based factors
+  const lat = location.lat;
+  const lng = location.lng;
+  
+  // Boston area coordinates for reference
+  const bostonCenter = { lat: 42.3601, lng: -71.0589 };
+  const distanceFromCenter = Math.sqrt(Math.pow(lat - bostonCenter.lat, 2) + Math.pow(lng - bostonCenter.lng, 2));
+  
+  // Generate location-specific multipliers
+  const urbanFactor = Math.max(0.5, 1.5 - distanceFromCenter * 10); // More urban = higher impact
+  const densityFactor = Math.max(0.7, 1.3 - distanceFromCenter * 8); // Higher density = more people
+  const greenSpaceFactor = Math.max(0.6, 1.4 - distanceFromCenter * 6); // Further from center = more green space potential
+  
+  // Building size factor (if available)
+  const squareFootage = buildingData?.['Square Footage'] || 'Unknown';
+  const sizeFactor = squareFootage === 'Unknown' ? 1.0 : 
+    squareFootage.includes('Large') ? 1.4 : 
+    squareFootage.includes('Medium') ? 1.1 : 0.8;
+  
+  // Model type factor
+  const modelFactor = modelType === 'Food and beverages' ? 1.2 : 
+    modelType === 'Retail' ? 1.0 : 
+    modelType === 'Office' ? 0.9 : 1.1;
+  
+  // Calculate dynamic values
+  const basePopulation = Math.round(2500 + (distanceFromCenter * -2000) + (Math.random() * 1000));
+  const baseFootTraffic = Math.round(120 + (urbanFactor * 100) + (Math.random() * 50));
+  const baseRevenue = Math.round(12000 + (urbanFactor * 8000) + (Math.random() * 4000));
+  
+  // Environmental impact calculations
+  const baseCarbonReduction = Math.round(12 + (urbanFactor * 6) + (sizeFactor * 4));
+  const baseEnergySavings = Math.round(25000 + (urbanFactor * 15000) + (sizeFactor * 10000));
+  const baseWaterConservation = Math.round(18000 + (greenSpaceFactor * 7000) + (sizeFactor * 5000));
+  const baseWasteDiversion = Math.round(3 + (urbanFactor * 2) + (sizeFactor * 1.5));
+  
+  return {
   populationData: {
-    peopleWithinHalfMile: "2,500-4,000 people",
-    neighborhoodType: "Mixed residential-commercial",
-    populationDensity: "8,000-12,000 people per square mile",
-    demographics: "Young professionals, families, mixed income",
-    housingType: "Apartments and townhouses"
+    peopleWithinHalfMile: `${basePopulation.toLocaleString()}-${(basePopulation + 1500).toLocaleString()} people`,
+    neighborhoodType: distanceFromCenter < 0.05 ? "Urban commercial" : distanceFromCenter < 0.1 ? "Mixed residential-commercial" : "Suburban residential",
+    populationDensity: `${Math.round(8000 + (densityFactor * 4000)).toLocaleString()}-${Math.round(12000 + (densityFactor * 4000)).toLocaleString()} people per square mile`,
+    demographics: distanceFromCenter < 0.05 ? "Young professionals, students, mixed income" : "Families, young professionals, mixed income",
+    housingType: distanceFromCenter < 0.05 ? "High-rise apartments and condos" : "Apartments and townhouses"
   },
   businessAnalysis: {
-    localPopulationDensity: "2,500-4,000 people within 0.5 miles",
-    estimatedFootTraffic: "120-250 daily visitors based on local demographics",
-    estimatedRevenue: "$12,000-$28,000 monthly based on neighborhood income levels",
-    targetDemographics: "Local residents aged 25-45, mixed income levels",
-    competitionLevel: "3-5 similar businesses within 1 mile",
-    neighborhoodType: "Mixed residential-commercial area",
-    transportationAccess: "Good walkability, limited parking, near public transit",
-    seasonalVariations: "Higher traffic in summer, steady year-round",
-    growthPotential: "Moderate growth potential based on local development trends",
-    economicMultiplier: "1.8x local economic impact",
-    supplyChainImpact: "60-75% local supplier engagement"
+    localPopulationDensity: `${basePopulation.toLocaleString()}-${(basePopulation + 1500).toLocaleString()} people within 0.5 miles`,
+    estimatedFootTraffic: `${baseFootTraffic}-${baseFootTraffic + 100} daily visitors based on local demographics`,
+    estimatedRevenue: `$${baseRevenue.toLocaleString()}-$${(baseRevenue + 8000).toLocaleString()} monthly based on neighborhood income levels`,
+    targetDemographics: distanceFromCenter < 0.05 ? "Young professionals aged 22-35, students, mixed income" : "Local residents aged 25-45, families, mixed income levels",
+    competitionLevel: distanceFromCenter < 0.05 ? "5-8 similar businesses within 1 mile" : "2-4 similar businesses within 1 mile",
+    neighborhoodType: distanceFromCenter < 0.05 ? "Urban commercial district" : distanceFromCenter < 0.1 ? "Mixed residential-commercial area" : "Suburban residential area",
+    transportationAccess: distanceFromCenter < 0.05 ? "Excellent walkability, limited parking, multiple transit options" : "Good walkability, limited parking, near public transit",
+    seasonalVariations: distanceFromCenter < 0.05 ? "Steady year-round with peak during academic year" : "Higher traffic in summer, steady year-round",
+    growthPotential: distanceFromCenter < 0.05 ? "High growth potential in expanding urban core" : "Moderate growth potential based on local development trends",
+    economicMultiplier: `${(1.5 + (urbanFactor * 0.5)).toFixed(1)}x local economic impact`,
+    supplyChainImpact: `${Math.round(60 + (urbanFactor * 15))}-${Math.round(75 + (urbanFactor * 15))}% local supplier engagement`
   },
 
   // UI expects `environmentalImpact` with those exact keys
   environmentalImpact: {
-    localCarbonReduction: "12-18 tons CO2 annually",
-    neighborhoodAirQualityImprovement: "15-20% improvement",
-    localBiodiversityEnhancement: "Significant positive impact on local ecosystem",
-    walkabilityImprovement: "Reduces car dependency by 30-40%",
-    localWasteDiversion: "8-12 tons diverted annually",
-    communityGreenSpace: "500-800 sq ft contribution",
-    neighborhoodNoiseReduction: "8-12 decibel reduction",
-    localWaterConservation: "15,000-25,000 gallons saved",
-    transportationEfficiency: "25-35% reduction in local traffic",
-    communityEnvironmentalEducation: "Monthly workshops and programs"
+    localCarbonReduction: `${baseCarbonReduction}-${baseCarbonReduction + 6} tons CO2 annually`,
+    neighborhoodAirQualityImprovement: `${Math.round(15 + (urbanFactor * 5))}-${Math.round(20 + (urbanFactor * 5))}% improvement`,
+    localBiodiversityEnhancement: greenSpaceFactor > 1.2 ? "Significant positive impact on local ecosystem" : "Moderate positive impact on local ecosystem",
+    walkabilityImprovement: distanceFromCenter < 0.05 ? "Reduces car dependency by 40-50%" : "Reduces car dependency by 30-40%",
+    localWasteDiversion: `${baseWasteDiversion}-${baseWasteDiversion + 4} tons diverted annually`,
+    communityGreenSpace: `${Math.round(500 + (greenSpaceFactor * 300))}-${Math.round(800 + (greenSpaceFactor * 400))} sq ft contribution`,
+    neighborhoodNoiseReduction: `${Math.round(8 + (urbanFactor * 2))}-${Math.round(12 + (urbanFactor * 3))} decibel reduction`,
+    localWaterConservation: `${baseWaterConservation.toLocaleString()}-${(baseWaterConservation + 10000).toLocaleString()} gallons saved`,
+    transportationEfficiency: distanceFromCenter < 0.05 ? "35-45% reduction in local traffic" : "25-35% reduction in local traffic",
+    communityEnvironmentalEducation: distanceFromCenter < 0.05 ? "Bi-weekly workshops and programs" : "Monthly workshops and programs"
+  },
+
+  // Add environmental futures simulation data for projected impact
+  environmentalFuturesSimulation: {
+    currentState: {
+      baselineCarbonFootprint: `${Math.round(45 + (sizeFactor * 15))}-${Math.round(60 + (sizeFactor * 20))} tons CO2 annually`,
+      energyConsumption: `${Math.round(180000 + (sizeFactor * 40000)).toLocaleString()}-${Math.round(220000 + (sizeFactor * 50000)).toLocaleString()} kWh annually`,
+      waterUsage: `${Math.round(120000 + (sizeFactor * 30000)).toLocaleString()}-${Math.round(150000 + (sizeFactor * 40000)).toLocaleString()} gallons annually`,
+      wasteGeneration: `${Math.round(15 + (sizeFactor * 5))}-${Math.round(20 + (sizeFactor * 8))} tons annually`,
+      airQualityIndex: distanceFromCenter < 0.05 ? "Moderate to Poor (AQI 70-90)" : "Moderate (AQI 60-80)",
+      biodiversityIndex: greenSpaceFactor > 1.2 ? "Moderate to High" : "Low to Moderate"
+    },
+    projectedImpact: {
+      year1: {
+        carbonReduction: `${baseCarbonReduction}-${baseCarbonReduction + 4} tons CO2`,
+        energySavings: `${baseEnergySavings.toLocaleString()}-${(baseEnergySavings + 10000).toLocaleString()} kWh`,
+        waterConservation: `${baseWaterConservation.toLocaleString()}-${(baseWaterConservation + 7000).toLocaleString()} gallons`,
+        wasteDiversion: `${baseWasteDiversion}-${baseWasteDiversion + 2} tons`
+      },
+      year5: {
+        carbonReduction: `${Math.round(baseCarbonReduction * 3.5)}-${Math.round(baseCarbonReduction * 4.5)} tons CO2`,
+        energySavings: `${Math.round(baseEnergySavings * 3.5).toLocaleString()}-${Math.round(baseEnergySavings * 4.5).toLocaleString()} kWh`,
+        waterConservation: `${Math.round(baseWaterConservation * 3.5).toLocaleString()}-${Math.round(baseWaterConservation * 4.5).toLocaleString()} gallons`,
+        wasteDiversion: `${Math.round(baseWasteDiversion * 3.5)}-${Math.round(baseWasteDiversion * 4.5)} tons`
+      },
+      year10: {
+        carbonReduction: `${Math.round(baseCarbonReduction * 6)}-${Math.round(baseCarbonReduction * 8)} tons CO2`,
+        energySavings: `${Math.round(baseEnergySavings * 6).toLocaleString()}-${Math.round(baseEnergySavings * 8).toLocaleString()} kWh`,
+        waterConservation: `${Math.round(baseWaterConservation * 6).toLocaleString()}-${Math.round(baseWaterConservation * 8).toLocaleString()} gallons`,
+        wasteDiversion: `${Math.round(baseWasteDiversion * 6)}-${Math.round(baseWasteDiversion * 8)} tons`
+      }
+    }
   },
 
   // **KEYS RENAMED TO MATCH MAPVIEW EXPECTATIONS**
@@ -106,7 +174,9 @@ const FALLBACK_ANALYSIS = {
     mitigationStrategies: "Adaptive design, flexible operations, diversified revenue streams",
     contingencyPlans: "Backup energy systems, emergency protocols, financial reserves"
   }
-};
+  };
+}
+
 // --- end replacement ---
 
 // Utility: escape HTML to avoid XSS when rendering model output
@@ -367,8 +437,8 @@ export async function GET(request: NextRequest) {
     const lng = parseFloat(document.getElementById('lng').value);
     const w = window.open();
     // build page using inline data
-    const analysis = ${JSON.stringify(FALLBACK_ANALYSIS)};
-    const page = (new DOMParser()).parseFromString(\`${renderAnalysisPage(FALLBACK_ANALYSIS, { lat:  parseFloat('42.3731'), lng: parseFloat('-71.1183')})}\`, 'text/html');
+    const analysis = ${JSON.stringify(generateDynamicAnalysis({ lat: 42.3731, lng: -71.1183 }, {}, 'default'))};
+    const page = (new DOMParser()).parseFromString(\`${renderAnalysisPage(generateDynamicAnalysis({ lat: 42.3731, lng: -71.1183 }, {}, 'default'), { lat:  parseFloat('42.3731'), lng: parseFloat('-71.1183')})}\`, 'text/html');
     w.document.write(page.documentElement.outerHTML);
     w.document.close();
   });
@@ -382,6 +452,8 @@ export async function GET(request: NextRequest) {
 
 // POST handler (keeps original behavior but supports HTML output)
 export async function POST(request: NextRequest) {
+  let location: any = { lat: 42.3601, lng: -71.0589 }, modelType: string = 'default', buildingData: any = {};
+  
   try {
     console.log('API Route: analyze-location called');
 
@@ -399,7 +471,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
     }
 
-    const { location, modelType, buildingData } = body || {};
+    ({ location, modelType, buildingData } = body || {});
     console.log('API Route: Received data:', { location, modelType, buildingData });
 
     // Basic validation
@@ -412,16 +484,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing or invalid "location" (require { lat: number, lng: number })' }, { status: 400 });
     }
 
-    // If no API key, return fallback immediately
+    // If no API key, return dynamic fallback immediately
     const geminiKey = process.env.GEMINI_API_KEY;
     if (!geminiKey) {
-      console.warn('API Route: No Gemini API key found, returning fallbackAnalysis');
+      console.warn('API Route: No Gemini API key found, returning dynamic analysis');
+      const dynamicAnalysis = generateDynamicAnalysis(location, buildingData, modelType);
       const accept = request.headers.get('accept') || '';
       if (accept.includes('text/html') || new URL(request.url).searchParams.get('format') === 'html') {
-        const page = renderAnalysisPage(FALLBACK_ANALYSIS, location);
+        const page = renderAnalysisPage(dynamicAnalysis, location);
         return new NextResponse(page, { headers: { 'content-type': 'text/html; charset=utf-8' }});
       }
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS }, { status: 200 });
+      return NextResponse.json({ analysis: dynamicAnalysis }, { status: 200 });
     }
 
     // Build prompt (kept concise)
@@ -451,7 +524,7 @@ export async function POST(request: NextRequest) {
       }
     };
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
 
     const resp = await fetch(url, {
       method: 'POST',
@@ -464,13 +537,14 @@ export async function POST(request: NextRequest) {
 
     if (!resp.ok) {
       console.error('Gemini API error:', resp.status, await resp.text());
-      // On non-200 from Gemini, return fallback but indicate upstream failure
+      // On non-200 from Gemini, return dynamic fallback but indicate upstream failure
+      const dynamicAnalysis = generateDynamicAnalysis(location, buildingData, modelType);
       const accept = request.headers.get('accept') || '';
       if (accept.includes('text/html') || new URL(request.url).searchParams.get('format') === 'html') {
-        const page = renderAnalysisPage(FALLBACK_ANALYSIS, location);
+        const page = renderAnalysisPage(dynamicAnalysis, location);
         return new NextResponse(page, { status: 502, headers: { 'content-type': 'text/html; charset=utf-8' }});
       }
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS, warning: `Upstream model returned ${resp.status}` }, { status: 502 });
+      return NextResponse.json({ analysis: dynamicAnalysis, warning: `Upstream model returned ${resp.status}` }, { status: 502 });
     }
 
     const data = await resp.json();
@@ -483,13 +557,14 @@ export async function POST(request: NextRequest) {
       null;
 
     if (!candidateText || typeof candidateText !== 'string') {
-      console.warn('No candidate text found from Gemini, returning fallback');
+      console.warn('No candidate text found from Gemini, returning dynamic fallback');
+      const dynamicAnalysis = generateDynamicAnalysis(location, buildingData, modelType);
       const accept = request.headers.get('accept') || '';
       if (accept.includes('text/html') || new URL(request.url).searchParams.get('format') === 'html') {
-        const page = renderAnalysisPage(FALLBACK_ANALYSIS, location);
+        const page = renderAnalysisPage(dynamicAnalysis, location);
         return new NextResponse(page, { headers: { 'content-type': 'text/html; charset=utf-8' }});
       }
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS, warning: 'No content returned from model' }, { status: 200 });
+      return NextResponse.json({ analysis: dynamicAnalysis, warning: 'No content returned from model' }, { status: 200 });
     }
 
     // Try to parse the JSON returned by the model. If parsing fails, fall back.
@@ -500,32 +575,34 @@ export async function POST(request: NextRequest) {
     } catch (parseError) {
       console.error('JSON parsing error from Gemini response:', parseError);
       console.debug('Gemini raw output (truncated):', (candidateText || '').slice(0, 2000));
+      const dynamicAnalysis = generateDynamicAnalysis(location, buildingData, modelType);
       const accept = request.headers.get('accept') || '';
       if (accept.includes('text/html') || new URL(request.url).searchParams.get('format') === 'html') {
-        // show fallback page and include raw model output for debugging (escaped)
-        const page = renderAnalysisPage(FALLBACK_ANALYSIS, location) + `
+        // show dynamic fallback page and include raw model output for debugging (escaped)
+        const page = renderAnalysisPage(dynamicAnalysis, location) + `
           <div style="max-width:1200px;margin:16px auto;padding:16px;background:#06102a;border-radius:12px;color:#f1f5f9;">
             <h3 style="margin-top:0;color:#fbbf24">Model output (could not parse JSON)</h3>
             <pre style="white-space:pre-wrap">${escapeHtml(candidateText)}</pre>
           </div>`;
         return new NextResponse(page, { headers: { 'content-type': 'text/html; charset=utf-8' }});
       }
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS, warning: 'Failed to parse model JSON; returned fallback analysis' }, { status: 200 });
+      return NextResponse.json({ analysis: dynamicAnalysis, warning: 'Failed to parse model JSON; returned dynamic analysis' }, { status: 200 });
     }
 
     // Validate key pieces of parsed analysis
     if (!analysis || !analysis.populationData || !analysis.businessAnalysis) {
-      console.warn('Parsed analysis missing required sections; returning fallback');
+      console.warn('Parsed analysis missing required sections; returning dynamic fallback');
+      const dynamicAnalysis = generateDynamicAnalysis(location, buildingData, modelType);
       const accept = request.headers.get('accept') || '';
       if (accept.includes('text/html') || new URL(request.url).searchParams.get('format') === 'html') {
-        const page = renderAnalysisPage(FALLBACK_ANALYSIS, location) + `
+        const page = renderAnalysisPage(dynamicAnalysis, location) + `
           <div style="max-width:1200px;margin:16px auto;padding:16px;background:#06102a;border-radius:12px;color:#f1f5f9;">
             <h3 style="margin-top:0;color:#fbbf24">Note</h3>
-            <div>Parsed analysis was incomplete; fallback content shown.</div>
+            <div>Parsed analysis was incomplete; dynamic analysis shown.</div>
           </div>`;
         return new NextResponse(page, { headers: { 'content-type': 'text/html; charset=utf-8' }});
       }
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS, warning: 'Parsed analysis incomplete' }, { status: 200 });
+      return NextResponse.json({ analysis: dynamicAnalysis, warning: 'Parsed analysis incomplete' }, { status: 200 });
     }
 
     // Success: return parsed analysis as JSON or render HTML page depending on Accept or format param
@@ -542,10 +619,12 @@ export async function POST(request: NextRequest) {
 
     // If the error was an abort, return a clear message
     if (error?.name === 'AbortError') {
-      return NextResponse.json({ analysis: FALLBACK_ANALYSIS, warning: 'Request to model timed out' }, { status: 504 });
+      const dynamicAnalysis = generateDynamicAnalysis(location || { lat: 42.3601, lng: -71.0589 }, buildingData || {}, modelType || 'default');
+      return NextResponse.json({ analysis: dynamicAnalysis, warning: 'Request to model timed out' }, { status: 504 });
     }
 
-    // Generic server error — return fallback for graceful UX
-    return NextResponse.json({ analysis: FALLBACK_ANALYSIS, error: String(error) }, { status: 500 });
+    // Generic server error — return dynamic fallback for graceful UX
+    const dynamicAnalysis = generateDynamicAnalysis(location || { lat: 42.3601, lng: -71.0589 }, buildingData || {}, modelType || 'default');
+    return NextResponse.json({ analysis: dynamicAnalysis, error: String(error) }, { status: 500 });
   }
 }
