@@ -1,11 +1,18 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <p>
-        Hello World!
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white font-sans">
+      <h1 className="text-4xl mb-6">Welcome</h1>
+      <p className="text-lg mb-10 text-gray-300">
+        Discover how our demo works in one click.
       </p>
+      <Link
+        href="/Mapbox"
+        className="border border-white rounded-lg text-white px-6 py-3 text-lg hover:bg-white hover:text-black transition"
+      >
+        Demo
+      </Link>
     </div>
   );
 }
