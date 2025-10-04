@@ -6,7 +6,7 @@ const MapView = dynamic(() => import("../../components/MapView"), { ssr: false }
 
 export default function HomePage() {
   return (
-    <main className="h-screen w-screen">
+    <main className="h-full w-full relative">
       <MapView />
     </main>
   );

@@ -25,7 +25,8 @@
         "Recorded Owner": "STONE INVESTMENT HOLDING LLC, 9 SHEPARD ST., CAMBRIDGE, MA 02138",
         "Leasing Contact": "Atlantic Retail, Scott Black, 617.369.5902 sblack@atlanticretail.com, Sophie Morrill, 617.369.5926, smorrill@atlanticretail.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -52,7 +53,8 @@
         "Recorded Owner": "The Fresh Pond Mall Limited Partnership, 545 Concord Ave, Cambridge, MA 02140",
         "Leasing Contact": "Vast Capital Management, (617) 491-4431",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/alewifeandfreshpond/174_Alewife_Brook_Parkway_01.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/alewifeandfreshpond/174_Alewife_Brook_Parkway_01.jpg",
+        "recommended": false
       }
     },
     {
@@ -79,7 +81,8 @@
         "Recorded Owner": "MANOUSHAGIAN, BERJ M. & ANIE MANOUSHAGIAN, TRS OF, 2445 MASS AVE REALTY TRUST, P.O. BOX 550155, WALTHAM, MA 02455",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -106,7 +109,8 @@
         "Recorded Owner": "Watermark Central LLC, 425 Mass Ave, Cambridge, MA 02139",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg",
+        "recommended": false
       }
     },
     {
@@ -133,7 +137,8 @@
         "Recorded Owner": "ROTHMAN, GEORGE & ETHEL ROTHMAN, C/O FIRST CAMBRIDGE REALTY, 907 MASS AVE, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -160,7 +165,8 @@
         "Recorded Owner": "RIBEIRO, ANTONIO F. & ISABEL C. QUELHAS, TRS, THE QUELHAS RIBEIRO 2018 TRUST, 30 CHELSEA ST UNIT 610, EVERETT, MA 02149",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -187,7 +193,8 @@
         "Recorded Owner": "Richard Simon & William C. Kaplan, Trs. c/o Eastport Real Estate Services, Wakefield, MA 01880",
         "Leasing Contact": "(781) 890-5855",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -214,7 +221,8 @@
         "Recorded Owner": "DW NP PROPERTY, LLC, C/O DIVCOWEST, 222 JACOBS ST. 1ST FL, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -241,7 +249,8 @@
         "Recorded Owner": "100 CAMBRIDGESIDE PL GROUND OWNER LLC, C/O SAFEHOLD INC., 1114 AVE OF THE AMERICAS FL 39, NEW YORK, NY 10036",
         "Leasing Contact": "Beth Spiegel, Specialty Leasing Manager, 617.299.2574, BSpiegel@NEDevelopment.com",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/100_Cambridgeside_Place_60_First_Street_20240212.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/100_Cambridgeside_Place_60_First_Street_20240212.jpg",
+        "recommended": false
       }
     },
     {
@@ -268,7 +277,8 @@
         "Recorded Owner": "DW NP PROPERTY, LLC, C/O DIVCO WEST REAL ESTATE, 222 JACOBS ST. 1ST FLR, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -295,7 +305,8 @@
         "Recorded Owner": "955 MASSACHUSETTS AVENUE MA,LLC, C/O INTERCONTINENTAL REAL ESTATE CORP., 1270 SOLDIERS FIELD , RD, BOSTON, MA 02135",
         "Leasing Contact": "Boston Urban Properties, info@bostonurban.com, 617-274-4900",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -322,7 +333,8 @@
         "Recorded Owner": "Gas Light Building LLC, 118 Milk St, Boston, MA 02109",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -349,7 +361,8 @@
         "Recorded Owner": "DW PROPCO I2 LLC, 222 JACOBS ST, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -376,7 +389,8 @@
         "Recorded Owner": "GH HOLDINGS LP,1696 NE MIAMI GARDENS DR, NORTH MIAMI BEACH, FL 33179",
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -403,7 +417,8 @@
         "Recorded Owner": "Observatory Hill Development LLC, c/o Eric Hoagland, 195 Lexington Ave. Cambridge, MA 0218",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -430,7 +445,8 @@
         "Recorded Owner": "RIBEIRO, ANTONIO F. & ISABEL C. QUELHAS, TRS, THE QUELHAS RIBEIRO 2018 TRUST, 30 CHELSEA ST UNIT 610, EVERETT, MA 02149",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -457,7 +473,8 @@
         "Recorded Owner": "PKH Properties, LLC, P.O. Box 621 Brookline, MA 02446",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1906_Mass_Ave_20240209_1.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1906_Mass_Ave_20240209_1.jpg",
+        "recommended": false
       }
     },
     {
@@ -484,7 +501,8 @@
         "Recorded Owner": "40 THORNDIKE LLC, 10 POST OFFICE SQ, 13TH FLOOR, BOSTON, MA 02109",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -511,7 +529,8 @@
         "Recorded Owner": "2285 Mass Ave Realty LLC, 2269 Massachusetts Ave, Cambridge, MA 02140",
         "Leasing Contact": "ABG Realty, 307 Cambridge Street, Cambridge, MA 02141, 617.492.9900",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -538,7 +557,8 @@
         "Recorded Owner": "WATERMARK II MEMBER, LLC, 801 GRAND AVENUE, DES MOINES, IA 50392",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -565,7 +585,8 @@
         "Recorded Owner": "Leonidas Perez, 230 Prospect Street Cambridge, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -592,7 +613,8 @@
         "Recorded Owner": "SOZIO LOUIS A. TRUS OF A.L.S. REALTY TR., 150 MAIN STREET, WAKEFIELD, MA 01880",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -619,7 +641,8 @@
         "Recorded Owner": "Harvard Square Holding LLC, 166 Harvard St., Brookline, MA 02446",
         "Leasing Contact": "Conviser Property Group, ADAM CONVISERADAM@CONVISERPG.COM, MOBILE: (617) 593-1700",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -646,7 +669,8 @@
         "Recorded Owner": "Watermark Central LLC, 425 Mass Ave, Cambridge, MA 02139",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg",
+        "recommended": false
       }
     },
     {
@@ -673,7 +697,8 @@
         "Recorded Owner": "YUAN LIZHANG & LI ZHANG, 225 WHITE ST BELMONT, MA 02478",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/305_Webster_20240212_4.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/305_Webster_20240212_4.jpg",
+        "recommended": false
       }
     },
     {
@@ -700,7 +725,8 @@
         "Recorded Owner": "CAMBRIDGE REDEVELOPMENT AUTHORITY, 255 MAIN ST 4TH FLOOR, CAMBRIDGE, MA 02142",
         "Leasing Contact": "Not Applicable",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2326_Mass_Ave_20240209_4.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2326_Mass_Ave_20240209_4.jpg",
+        "recommended": false
       }
     },
     {
@@ -727,7 +753,8 @@
         "Recorded Owner": "John J. and Mary L. Alberts, 172 High St., Winchester, MA 01890",
         "Leasing Contact": "Eastern Retail, Joe Morrison, jmorrison@easternretail.com, (617) 630-1180",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/291-293_Cambridge_Street_20240212_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/291-293_Cambridge_Street_20240212_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -754,7 +781,8 @@
         "Recorded Owner": "DW PROPCO I LLC, 222 JACOBS ST. 1ST FLR, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -781,7 +809,8 @@
         "Recorded Owner": "1685 Mass Ave LLC, 626 Main St. Acton MA 01720",
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -808,7 +837,8 @@
         "Recorded Owner": "DW PROPCO I2 LLC, 222 JACOBS ST, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -835,7 +865,8 @@
         "Recorded Owner": "Richard C. & Judith F. Silver, c/o Richard C. Silver Rev. Trust, 6876 Parisian Way, Lake Worth, FL 33467",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -862,7 +893,8 @@
         "Recorded Owner": "DU, SU &, YIFEI DU, 37 SHADY HILL RD, WESTON, MA 02493",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -889,7 +921,8 @@
         "Recorded Owner": "CAMBRIDGE RESEARCH PARK, LLC, TWINING PROPERTIES LLC, NEW YORK, NY 10017",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -916,7 +949,8 @@
         "Recorded Owner": "575 MASS AVE LLC, 585 MASSACHUSETTS AVE, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/571-577_Mass_Ave_20240222_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/571-577_Mass_Ave_20240222_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -943,7 +977,8 @@
         "Recorded Owner": "MOUSSALLEM, GEORGE N TRS, TYR REALTY TR, 18 STULTS RD, BELMONT, MA 02478",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/obshillandhuronvill/244_Huron_240205_031.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/obshillandhuronvill/244_Huron_240205_031.jpg",
+        "recommended": false
       }
     },
     {
@@ -970,7 +1005,8 @@
         "Recorded Owner": "MAYER, EDWARD A. & LOUISE M. MAYER, 14 TURNER RD, N. BILLERICA, MA 01862",
         "Leasing Contact": "Gibson Sotheby's International Realty Brokers, Michael Hartwick, 617-371-7276",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -997,7 +1033,8 @@
         "Recorded Owner": "CENTRAL PROPERTY LIMITED PARTNERSHIP, C/O RIVERSIDE MANAGEMENT, P.O. BOX 440317, WEST SOMERVILLE, MA 02144",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1024,7 +1061,8 @@
         "Recorded Owner": "Kirche, LLC c/o Prague & Company 15 Walnut Street, Suite 150, Wellesley, MA 02481",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/10_Church_20240220.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/10_Church_20240220.jpg",
+        "recommended": false
       }
     },
     {
@@ -1051,7 +1089,8 @@
         "Recorded Owner": "POULOS, NICHOLAS, 100 BALL HILL RD, BERLIN, MA 01503",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1078,7 +1117,8 @@
         "Recorded Owner": "ABODEZ ACORN CW LLC, 300 WASHINGTON ST, SUITE#805, NEWTON, MA 02458",
         "Leasing Contact": "Acorn Property Management LLC, (617) 433-9700",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1105,7 +1145,8 @@
         "Recorded Owner": "NW CAMBRIDGE PROPERTY OWNER LLC, C/O NORTHWOOD INVESTORS LLC, PO BOX 2090, WARREN, MI 48090",
         "Leasing Contact": "Peter Dominski, pdominski@anchorlinepartners.com?",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1132,7 +1173,8 @@
         "Recorded Owner": "VELLUCCI-MELO, JULIANE J., TRUSTEE OF THE 141 HIGHLAND AVE REALTY TRUST, 4 SARAH LANE MAYNARD, MA 01754",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/657_Cambridge_Street_20240212_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/657_Cambridge_Street_20240212_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -1159,7 +1201,8 @@
         "Recorded Owner": "PRESIDENT & FELLOWS OF HARVARD COLLEGE, HOLYOKE CENTER - ROOM 1000, CAMBRIDGE, MA 02138-3895",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1186,7 +1229,8 @@
         "Recorded Owner": "303 THIRD SPE LLC, C/O EQR-R.E. TAX DEPARTMENT, P.O. BOX 87407 (19337), CHICAGO, IL 60680-0407",
         "Leasing Contact": "Beck Dangler, District Advisors, 315.723.8511, beck@districtadvisors.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1213,7 +1257,8 @@
         "Recorded Owner": "WINDSOR NINETY THREE LLC, 50 FRANKLIN STREET SUITE 400, BOSTON, MA 02110",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1240,7 +1285,8 @@
         "Recorded Owner": "DW PROPCO I2 LLC, 222 JACOBS ST, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1267,7 +1313,8 @@
         "Recorded Owner": "1050 MASS AVE INVESTMENT, INC., C/O LINCOLN PROPERTY CO, 18 TREMONT ST STE 149, BOSTON, MA 02108",
         "Leasing Contact": "Christopher Scott, 781-718-3260, cscott@lpc.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1294,7 +1341,8 @@
         "Recorded Owner": "Onaly A. Kapasi & Chander M. Kapasi, Trs., Ony’s Comet Trust, 356 Parker Street, Newton, MA 02459",
         "Leasing Contact": "Godino and Company, 617-965-4200, godinoco.com",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1248_Cambridge_Street_20240212_3.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1248_Cambridge_Street_20240212_3.jpg",
+        "recommended": false
       }
     },
     {
@@ -1321,7 +1369,8 @@
         "Recorded Owner": "DW NP PROPERTY, LLC, 222 JACOBS ST, 1ST FLR, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/250_Water_Street_20240212_1.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/250_Water_Street_20240212_1.jpg",
+        "recommended": false
       }
     },
     {
@@ -1348,7 +1397,8 @@
         "Recorded Owner": "1685 Mass Ave LLC, 626 Main St. Acton MA 01720",
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1375,7 +1425,8 @@
         "Recorded Owner": "ARE-MA REGION NO. 59 LLC, PO BOX 847, CARLSBAD, CA 92018",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1402,7 +1453,8 @@
         "Recorded Owner": "U.S. REIF Central Plaza Massachusetts LLC c/o Intercontinental Mgmt. Corporation 1270 Soldiers Field Rd. Boston, MA 02135",
         "Leasing Contact": "Boston Urban Partners, Patrick Conly, 617-274-4900",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/675_Mass_Ave_Central_20240222_1.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/675_Mass_Ave_Central_20240222_1.jpg",
+        "recommended": false
       }
     },
     {
@@ -1429,7 +1481,8 @@
         "Recorded Owner": "281 CONCORD LLC, 281 CONCORD AVE, CAMBRIDGE, MA 02138",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1456,7 +1509,8 @@
         "Recorded Owner": "Richard L. Friedman, John L. Hall III, 20 University Rd., Cambridge MA 02138",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1483,7 +1537,8 @@
         "Recorded Owner": "2323 MASSACHUSETTS AVE, LLC, 2200 MASS AVE. CAMBRIDGE, MA 02140-1836",
         "Leasing Contact": "BA Property & Lifestyle Advisors 451 Grove St Worcester, MA 01605 508-905-6073",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2329_Mass_Ave_20240209.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2329_Mass_Ave_20240209.jpg",
+        "recommended": false
       }
     },
     {
@@ -1510,7 +1565,8 @@
         "Recorded Owner": "SYNH LLC, 1249 BEACON ST, BROOKLINE, MA 02446",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1537,7 +1593,8 @@
         "Recorded Owner": "TA PORTER SQUARE LLC, ONE FEDERAL ST., 17TH FL, BOSTON, MA 02110",
         "Leasing Contact": "Wilder, Deb Di Meo, 617-309-7231",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1564,7 +1621,8 @@
         "Recorded Owner": "Parteen LLC, C/O Mintz Levin, COHN, FERRIS, GLOVSKY, ONE FINANCIAL CTR, ATTN : ALLAN CAGGIANO, ESQ, BOSTON, MA 02111",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/515_Mass_Ave_Central_20240222_1.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/515_Mass_Ave_Central_20240222_1.jpg",
+        "recommended": false
       }
     },
     {
@@ -1591,7 +1649,8 @@
         "Recorded Owner": "DW PROPCO I LLC, 222 JACOBS ST. 1ST FLR, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1618,7 +1677,8 @@
         "Recorded Owner": "ABU REALTY LLC, 144 WESTERN AVE, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1645,7 +1705,8 @@
         "Recorded Owner": "ARE-MA REGION NO. 102 OWNER, LLC, 26 N EUCLID AVE, PASADENA, CA 91101",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1672,7 +1733,8 @@
         "Recorded Owner": "U.S. REIF CENTRAL PLAZA MASS. LLC., C/O INTERCONTINENTAL MGMT CORP, 1270 SOLIDIERS FIELD RD\nBOSTON, MA 02135",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1699,7 +1761,8 @@
         "Recorded Owner": "BOYER, BURTON TRUSTEE OF LISA II REALTY TRUST, P.O. BOX 67398, CHESTNUT HILL, MA 02467",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1726,7 +1789,8 @@
         "Recorded Owner": "DIDOMENICO, SAVATORE & MARIE, TRUSTEES, SALS CONDO TR, 716 CAMBRIDGE ST, CAMBRIDGE, MA 02141-1497",
         "Leasing Contact": "JR Associates, (617) 913-4259",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1753,7 +1817,8 @@
         "Recorded Owner": "GH HOLDINGS LP,1696 NE MIAMI GARDENS DR, NORTH MIAMI BEACH, FL 33179",
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1780,7 +1845,8 @@
         "Recorded Owner": "MIT 165 MAIN ST FEE OWNER LLC, C/O MIT CAMBRIDGE REAL ESTATE LLC, ONE BROADWAY, SUITE 09-200, CAMBRIDGE, MA 02142",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1807,7 +1873,8 @@
         "Recorded Owner": "1030 CAMBRIDGE STREET, LLC, 2 WORCESTER ST, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1834,7 +1901,8 @@
         "Recorded Owner": "NEW CREEK LLC, C/O KIMCO REALTY CORP, 500 NORTH BROADWAY STE 201, JERICHO, NY 11753",
         "Leasing Contact": "Amy Daniels, Leasing Representative, (516) 869-7195, adaniels@kimcorealty.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1861,7 +1929,8 @@
         "Recorded Owner": "HAVENTREE LLC, 15 ELMER ST, CAMBRIDGE, MA 02138",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/26_Brattle_20240220.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/26_Brattle_20240220.jpg",
+        "recommended": false
       }
     },
     {
@@ -1888,7 +1957,8 @@
         "Recorded Owner": "Mark W. Williamson Trustee, Mark W. Williamson Esq., PC, P.O. Box #267, Sterling, MA 01564",
         "Leasing Contact": "District Real Estate Advisors. Contact: 617-943-2272",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/904_Mass_Ave_Central_20240222.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/904_Mass_Ave_Central_20240222.jpg",
+        "recommended": false
       }
     },
     {
@@ -1915,7 +1985,8 @@
         "Recorded Owner": "561 CAMBRIDGE/7TH STREET, LLC, 92 HIGH STREET, MEDFORD, MA 02155",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1942,7 +2013,8 @@
         "Recorded Owner": "CIFRINO-MASSACHUSETTS AVENUE REALTY LLC., C/O SUPERIOR REALTY CO., INC., 540 GALLIVAN BOULEVARD, DORCHESTER, MA 02124",
         "Leasing Contact": "BEN RAVELSON, 617.239.3646, BRAVELSON@ATLANTICRETAIL.COM, ROBIN ESTUS, 617.239.3604 RESTUS@ATLANTICRETAIL.COM",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -1969,7 +2041,8 @@
         "Recorded Owner": "1685 Mass Ave LLC, 626 Main St. Acton MA 01720",
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1691_Mass_Ave_Lower_Mass_Ave20240222.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1691_Mass_Ave_Lower_Mass_Ave20240222.jpg",
+        "recommended": false
       }
     },
     {
@@ -1996,7 +2069,8 @@
         "Recorded Owner": "Harvard University, Harvard Realty, Smith Campus Center, 1350 Massachusetts Ave., Cambridge, MA 02138",
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2023,7 +2097,8 @@
         "Recorded Owner": "GLAZIER, SUSAN E. TRUSTEE OF JUNCTION REALTY TRUST OF CAMBRIDGE, 2294 MASSACHUSETTS AVE, CAMBRIDGE, MA 02140",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2050,7 +2125,8 @@
         "Recorded Owner": "1 CANAL OWNER LLC, 10100 SANTA MONICA BLVD 15TH FLOOR, LOS ANGELES, CA 90067",
         "Leasing Contact": "Ann Ehrhart, ann@everstreet.co, (617) 895-9789",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2077,7 +2153,8 @@
         "Recorded Owner": "DW NP PROPERTY, LLC, C/O DIVCO WEST REAL ESTATE, 222 JACOBS ST. 1ST FLR, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2104,7 +2181,8 @@
         "Recorded Owner": "1043 CAMBRIDGE ST LLC, 121 CHARLES ST, SOUTH BOSTON, MA 02116",
         "Leasing Contact": "Alden Bush, 617-863-8419, alden.bush@nmrk.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2131,7 +2209,8 @@
         "Recorded Owner": "DW PROPCO I2 LLC, 222 JACOBS ST, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2158,7 +2237,8 @@
         "Recorded Owner": "NAGGAR REALTY LLC., C/O 545-565 MASS AVE LLC, 585 MASSACHUSETTS AVE, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2185,7 +2265,8 @@
         "Recorded Owner": "Nathaniel H. and ISA H. Swartz, c/o SWARTZ 1995 REVOC. Trust, 205 W. Vinegar Valley Rd. Friendsville, TN.",
         "Leasing Contact": "Roy Papalia, (617) 306-7797",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/4_Hudson_Lower_Mass_Ave_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/4_Hudson_Lower_Mass_Ave_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -2212,7 +2293,8 @@
         "Recorded Owner": "CAMBRIDGE 168 LLC, 470 MIDDLE ST, BRAINTREE, MA 02184",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1095_Camb%20ridge_Street_20240212_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1095_Camb%20ridge_Street_20240212_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -2239,7 +2321,8 @@
         "Recorded Owner": "Colannino, Joseph A., Francis X., Robert, Anthony J., Marian L. & Maria C. Riverside Management, PO BOX 440317, West Somerville, MA 02144",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2094_Mass_Ave_20240209_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2094_Mass_Ave_20240209_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -2266,7 +2349,8 @@
         "Recorded Owner": "BARROS, MANUEL S. & MARIA T. BARROS TRS., OF M&M BARROS REALTY TRUST, 4 MARION STREET, CAMBRIDGE, MA 02141-1413",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2293,7 +2377,8 @@
         "Recorded Owner": "DAMASO REALTY, LLC, 10 KINGS BEACH RD, LYNN, MA 01902",
         "Leasing Contact": "Coelho Realty Group 617-764-4342",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/484_490_Cambridge_Street_20240212_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/484_490_Cambridge_Street_20240212_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -2320,7 +2405,8 @@
         "Recorded Owner": "John T. Gomatos & Christine Gomatos, c/o Brattle Sq Office Bldg. Co., P.O. Box 380828, Cambridge, MA 02238",
         "Leasing Contact": "Newmark, Greg Covey 617-863-8459",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/4448brattle_harvard.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/4448brattle_harvard.jpg",
+        "recommended": false
       }
     },
     {
@@ -2347,7 +2433,8 @@
         "Recorded Owner": "DW PROPCO I2 LLC, 222 JACOBS ST, CAMBRIDGE, MA 02141",
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2374,7 +2461,8 @@
         "Recorded Owner": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY, OFFICE OF THE TREASURER, C/O MIT INVESTMENT MGMT CO, ONE BROADWAY 9TH FLOOR. SUITE 200, CAMBRIDGE, MA 02142",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/350_Mass_Ave_Central_20240222_2.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/350_Mass_Ave_Central_20240222_2.jpg",
+        "recommended": false
       }
     },
     {
@@ -2401,7 +2489,8 @@
         "Recorded Owner": "1925 Mass Ave LLC c/o Eric Hoagland, 195 Lexington Ave, Cambridge, MA 02139",
         "Leasing Contact": "Roy Papalia, (617) 484-7474",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1925_Mass_Ave_20240209_1.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1925_Mass_Ave_20240209_1.jpg",
+        "recommended": false
       }
     },
     {
@@ -2428,7 +2517,8 @@
         "Recorded Owner": "NEW CREEK LLC, C/O KIMCO REALTY CORP, 500 NORTH BROADWAY STE 201, JERICHO, NY 11753",
         "Leasing Contact": "Amy Daniels, Leasing Representative, (516) 869-7195, adaniels@kimcorealty.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2455,7 +2545,8 @@
         "Recorded Owner": "GH HOLDINGS LP,1696 NE MIAMI GARDENS DR, NORTH MIAMI BEACH, FL 33179",
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2482,7 +2573,8 @@
         "Recorded Owner": "805 MAIN ST. LLC, 33 CHURCH ST, CAMBRIDGE, MA 02138",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/799_Main_Street_20240222_3.jpg"
+        "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/799_Main_Street_20240222_3.jpg",
+        "recommended": false
       }
     },
     {
@@ -2509,7 +2601,8 @@
         "Recorded Owner": "ARE-MA REGION NO. 59 LLC, PO BOX 847, CARLSBAD, CA 92018",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2536,7 +2629,8 @@
         "Recorded Owner": "Urban Spaces, LLC, 111 First Street, Cambridge, MA 02141",
         "Leasing Contact": "Adam Conviser, Conviser Property Group, 781-320-0600 adam@conviserpg.com",
         "Dataset Date": "September 2025",
-        "Image": "https://cityofcambridge.sharepoint.com/:i:/r/sites/CDDDocumentCenter/Shared%20Documents/Economic%20Opportunities%20%26%20Development/Retail%20Plan%20Implementation/07%20Vacant%20Storefronts/08%20Vacant%20Storefront%20Database(s)/Vacant%20Storefront%20Photos/2025%20March/117%20first%20st.jpg?csf=1&web=1&e=5nft6f"
+        "Image": "https://cityofcambridge.sharepoint.com/:i:/r/sites/CDDDocumentCenter/Shared%20Documents/Economic%20Opportunities%20%26%20Development/Retail%20Plan%20Implementation/07%20Vacant%20Storefronts/08%20Vacant%20Storefront%20Database(s)/Vacant%20Storefront%20Photos/2025%20March/117%20first%20st.jpg?csf=1&web=1&e=5nft6f",
+        "recommended": false
       }
     },
     {
@@ -2563,7 +2657,8 @@
         "Recorded Owner": "194 HARVARD ST DEVELOPMENT, LLC, 194 HARVARD ST, CAMBRIDGE, MA 02139",
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     },
     {
@@ -2590,7 +2685,8 @@
         "Recorded Owner": "Lubavitch of Cambridge Inc, 38-40 Banks St, Cambridge, MA 02138",
         "Leasing Contact": "617-547-6124",
         "Dataset Date": "September 2025",
-        "Image": null
+        "Image": null,
+        "recommended": false
       }
     }
   ]
