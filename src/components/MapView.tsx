@@ -140,6 +140,14 @@ export default function MapView() {
 
                         const props = feature.properties as Record<string, any>;
 
+                        // Center the map on the clicked pin
+                        map.current!.flyTo({
+                            center: e.lngLat,
+                            zoom: 18,
+                            duration: 1000,
+                            essential: true
+                        });
+
                         // Remove existing popup if any
                         const existingPopup = document.getElementById('left-side-popup');
                         if (existingPopup) {
