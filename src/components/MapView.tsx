@@ -3,12 +3,81 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map } from "mapbox-gl";
 import { createRoot } from "react-dom/client";
-import { MdLocationOn } from "react-icons/md";
+import { 
+    MdLocationOn, 
+    MdEco, 
+    MdFlashOn, 
+    MdAttachMoney, 
+    MdAssignment, 
+    MdStar, 
+    MdWarning, 
+    MdTrendingUp, 
+    MdPeople, 
+    MdLightbulb,
+    MdHome,
+    MdBusiness,
+    MdGroup,
+    MdAnalytics,
+    MdPolicy,
+    MdHandshake,
+    MdAssessment,
+    MdCheckCircle,
+    MdInfo,
+    MdNotifications,
+    MdEdit,
+    MdRocket,
+    MdVisibility,
+    MdWater,
+    MdDelete,
+    MdAir,
+    MdNature,
+    MdAccountBalance,
+    MdSecurity,
+    MdGavel,
+    MdDomain,
+    MdTrendingDown,
+    MdShield,
+    MdReport,
+    MdPublic,
+    MdThermostat,
+    MdRefresh,
+    MdDirectionsWalk,
+    MdRecycling,
+    MdPark,
+    MdVolumeOff,
+    MdDirectionsBus,
+    MdSchool,
+    MdAccessibility
+} from "react-icons/md";
 
 const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN as string;
 console.log('Mapbox token:', mapboxToken ? 'Present' : 'Missing');
 console.log('Token value:', mapboxToken);
 mapboxgl.accessToken = mapboxToken;
+
+// Helper function to create React icon elements
+const createIconElement = (iconName: string, size: number = 20) => {
+    const iconMap: { [key: string]: any } = {
+        MdLocationOn, MdEco, MdFlashOn, MdAttachMoney, MdAssignment, MdStar, MdWarning, 
+        MdTrendingUp, MdPeople, MdLightbulb, MdHome, MdBusiness, MdGroup, MdAnalytics, 
+        MdPolicy, MdHandshake, MdAssessment, MdCheckCircle, MdInfo, MdNotifications, 
+        MdEdit, MdRocket, MdVisibility, MdWater, MdDelete, MdAir, MdNature, 
+        MdAccountBalance, MdSecurity, MdGavel, MdDomain, MdTrendingDown, MdShield, 
+        MdReport, MdPublic, MdThermostat, MdRefresh, MdDirectionsWalk, MdRecycling, 
+        MdPark, MdVolumeOff, MdDirectionsBus, MdSchool, MdAccessibility
+    };
+    
+    const IconComponent = iconMap[iconName];
+    if (!IconComponent) return null;
+    
+    const iconContainer = document.createElement('div');
+    iconContainer.style.cssText = `display: inline-flex; align-items: center; margin-right: 8px;`;
+    
+    const root = createRoot(iconContainer);
+    root.render(IconComponent({ size, style: { color: 'currentColor' } }));
+    
+    return iconContainer;
+};
 
 export default function MapView() {
     const mapContainer = useRef<HTMLDivElement>(null);
@@ -165,22 +234,23 @@ export default function MapView() {
                         // Create fixed popup on the left side
                         const popup = document.createElement('div');
                         popup.id = 'left-side-popup';
+                        // replace popup.style.cssText
                         popup.style.cssText = `
                             position: fixed;
                             top: 0;
                             left: 0;
-                            width: 340px;
+                            width: 360px;
                             height: 100vh;
-                            padding: 20px;
+                            padding: 18px;
                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                            background: linear-gradient(135deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.12));
-                            backdrop-filter: blur(12px);
-                            border-right: 1px solid rgba(255, 255, 255, 0.1);
+                            background: #f8f9fb;           /* neutral background */
+                            color: #111827;
+                            border-right: 1px solid #e6e9ee;
                             z-index: 1000;
                             display: flex;
                             flex-direction: column;
-                            justify-content: flex-start;
-                            overflow-y: auto;
+                            gap: 12px;
+                            overflow-y: auto;             /* keep the map popup narrow but readable */
                             box-sizing: border-box;
                         `;
 
@@ -328,20 +398,16 @@ export default function MapView() {
                                         supplyChainImpact: "70-85% local supplier engagement"
                                     },
                                     environmentalImpact: {
-                                        carbonEmissionsSaved: "12-18 tons CO2 annually",
-                                        energyEfficiencyGains: "25-35% improvement",
-                                        wasteReduction: "8-12 tons diverted annually",
-                                        waterConservation: "15,000-25,000 gallons saved",
-                                        airQualityImprovement: "15-20% improvement",
-                                        greenSpaceContribution: "500-800 sq ft",
-                                        sustainableTransportation: "40-60% eco-friendly transport",
-                                        renewableEnergyPotential: "30-50% renewable energy",
-                                        localFoodSourcing: "60-80% locally sourced",
-                                        biodiversityImpact: "Significant positive impact on local ecosystem",
-                                        stormwaterManagement: "50,000-75,000 gallons managed",
-                                        urbanHeatIslandReduction: "2-4°F temperature reduction",
-                                        noisePollutionReduction: "8-12 decibel reduction",
-                                        lightPollutionReduction: "25-40% reduction"
+                                        localCarbonReduction: "12-18 tons CO2 annually",
+                                        neighborhoodAirQualityImprovement: "15-20% improvement",
+                                        localBiodiversityEnhancement: "Significant positive impact on local ecosystem",
+                                        walkabilityImprovement: "Reduces car dependency by 30-40%",
+                                        localWasteDiversion: "8-12 tons diverted annually",
+                                        communityGreenSpace: "500-800 sq ft contribution",
+                                        neighborhoodNoiseReduction: "8-12 decibel reduction",
+                                        localWaterConservation: "15,000-25,000 gallons saved",
+                                        transportationEfficiency: "25-35% reduction in local traffic",
+                                        communityEnvironmentalEducation: "Monthly workshops and programs"
                                     },
                                     communityBenefits: {
                                         jobCreation: "8-15 new jobs",
@@ -406,22 +472,23 @@ export default function MapView() {
                         // Helper function to create environmental futures simulation section
                         const createEnvironmentalFuturesSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin: 0 0 32px 0;
-                                background: #ffffff;
-                                border: 1px solid #e5e7eb;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
                                 border-radius: 8px;
-                                padding: 24px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                color: #1f2937;
-                                border-bottom: 2px solid #e5e7eb;
-                                padding-bottom: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             title.textContent = 'Environmental Futures Simulation';
 
@@ -452,12 +519,12 @@ export default function MapView() {
 
                             const currentData = analysis.environmentalFuturesSimulation?.currentState || {};
                             const currentItems = [
-                                { label: 'Carbon Footprint', value: currentData.baselineCarbonFootprint || 'N/A', icon: '🌍' },
-                                { label: 'Energy Usage', value: currentData.energyConsumption || 'N/A', icon: '⚡' },
-                                { label: 'Water Usage', value: currentData.waterUsage || 'N/A', icon: '💧' },
-                                { label: 'Waste Generation', value: currentData.wasteGeneration || 'N/A', icon: '🗑️' },
-                                { label: 'Air Quality', value: currentData.airQualityIndex || 'N/A', icon: '🌬️' },
-                                { label: 'Biodiversity', value: currentData.biodiversityIndex || 'N/A', icon: '🦋' }
+                                { label: 'Carbon Footprint', value: currentData.baselineCarbonFootprint || 'N/A', icon: 'MdEco' },
+                                { label: 'Energy Usage', value: currentData.energyConsumption || 'N/A', icon: 'MdFlashOn' },
+                                { label: 'Water Usage', value: currentData.waterUsage || 'N/A', icon: 'MdWater' },
+                                { label: 'Waste Generation', value: currentData.wasteGeneration || 'N/A', icon: 'MdDelete' },
+                                { label: 'Air Quality', value: currentData.airQualityIndex || 'N/A', icon: 'MdAir' },
+                                { label: 'Biodiversity', value: currentData.biodiversityIndex || 'N/A', icon: 'MdNature' }
                             ];
 
                             currentItems.forEach(item => {
@@ -467,12 +534,20 @@ export default function MapView() {
                                     justify-content: space-between;
                                     align-items: center;
                                     padding: 8px 0;
-                                    border-bottom: 1px solid #f3f4f6;
+                                    border-bottom: 1px solid rgba(163, 230, 53, 0.2);
                                 `;
-                                itemDiv.innerHTML = `
-                                    <span style="font-weight: 500; color: #6b7280; font-size: 14px;">${item.icon} ${item.label}</span>
-                                    <span style="font-weight: 600; color: #1f2937; font-size: 14px;">${item.value}</span>
-                                `;
+                                const labelSpan = document.createElement('span');
+                                labelSpan.style.cssText = `font-weight: 500; color: #6b7280; font-size: 14px; display: flex; align-items: center;`;
+                                const iconElement = createIconElement(item.icon, 16);
+                                if (iconElement) labelSpan.appendChild(iconElement);
+                                labelSpan.appendChild(document.createTextNode(` ${item.label}`));
+                                
+                                const valueSpan = document.createElement('span');
+                                valueSpan.style.cssText = `font-weight: 600; color: #f1f5f9; font-size: 14px;`;
+                                valueSpan.textContent = item.value;
+                                
+                                itemDiv.appendChild(labelSpan);
+                                itemDiv.appendChild(valueSpan);
                                 currentMetrics.appendChild(itemDiv);
                             });
 
@@ -521,8 +596,8 @@ export default function MapView() {
                                     font-size: 14px;
                                     font-weight: 600;
                                     margin-bottom: 12px;
-                                    color: #374151;
-                                    border-bottom: 1px solid #f3f4f6;
+                                    color: #F0F9E8;
+                                    border-bottom: 1px solid rgba(163, 230, 53, 0.2);
                                     padding-bottom: 8px;
                                 `;
                                 yearTitle.textContent = yearLabels[index];
@@ -567,24 +642,28 @@ export default function MapView() {
                         // Helper function to create policy simulation section
                         const createPolicySimulationSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin-bottom: 30px;
-                                background: linear-gradient(135deg, #dc2626, #b91c1c);
-                                border-radius: 12px;
-                                padding: 24px;
-                                color: white;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
-                            title.innerHTML = '🏛️ Policy Simulation & Compliance';
+                            title.innerHTML = '';
+                            const iconElement1 = createIconElement('MdAccountBalance', 20);
+                            if (iconElement1) title.appendChild(iconElement1);
+                            title.appendChild(document.createTextNode(' Policy Simulation & Compliance'));
 
                             const content = document.createElement('div');
                             content.style.cssText = `
@@ -595,12 +674,12 @@ export default function MapView() {
 
                             const policyData = analysis.policySimulation || {};
                             const policyItems = [
-                                { label: 'Climate Resilience', value: policyData.climateResilience || 'N/A', icon: '🌡️' },
-                                { label: 'Green Incentives', value: policyData.greenBuildingIncentives || 'N/A', icon: '💰' },
-                                { label: 'Zoning Compliance', value: policyData.zoningCompliance || 'N/A', icon: '📋' },
-                                { label: 'Environmental Permits', value: policyData.environmentalPermits || 'N/A', icon: '📄' },
-                                { label: 'Sustainability Standards', value: policyData.sustainabilityStandards || 'N/A', icon: '⭐' },
-                                { label: 'Carbon Pricing Impact', value: policyData.carbonPricing || 'N/A', icon: '💸' }
+                                { label: 'Climate Resilience', value: policyData.climateResilience || 'N/A', icon: 'MdThermostat' },
+                                { label: 'Green Incentives', value: policyData.greenBuildingIncentives || 'N/A', icon: 'MdAttachMoney' },
+                                { label: 'Zoning Compliance', value: policyData.zoningCompliance || 'N/A', icon: 'MdAssignment' },
+                                { label: 'Environmental Permits', value: policyData.environmentalPermits || 'N/A', icon: 'MdAssignment' },
+                                { label: 'Sustainability Standards', value: policyData.sustainabilityStandards || 'N/A', icon: 'MdStar' },
+                                { label: 'Carbon Pricing Impact', value: policyData.carbonPricing || 'N/A', icon: 'MdAttachMoney' }
                             ];
 
                             policyItems.forEach(item => {
@@ -626,24 +705,28 @@ export default function MapView() {
                         // Helper function to create collaborative decision making section
                         const createCollaborativeSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin-bottom: 30px;
-                                background: linear-gradient(135deg, #7c3aed, #6d28d9);
-                                border-radius: 12px;
-                                padding: 24px;
-                                color: white;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
-                            title.innerHTML = '🤝 Collaborative Decision Making';
+                            title.innerHTML = '';
+                            const iconElement2 = createIconElement('MdHandshake', 20);
+                            if (iconElement2) title.appendChild(iconElement2);
+                            title.appendChild(document.createTextNode(' Collaborative Decision Making'));
 
                             const content = document.createElement('div');
                             content.style.cssText = `
@@ -685,24 +768,28 @@ export default function MapView() {
                         // Helper function to create risk assessment section
                         const createRiskAssessmentSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin-bottom: 30px;
-                                background: linear-gradient(135deg, #f59e0b, #d97706);
-                                border-radius: 12px;
-                                padding: 24px;
-                                color: white;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
-                            title.innerHTML = '⚠️ Risk Assessment & Mitigation';
+                            title.innerHTML = '';
+                            const iconElement3 = createIconElement('MdWarning', 20);
+                            if (iconElement3) title.appendChild(iconElement3);
+                            title.appendChild(document.createTextNode(' Risk Assessment & Mitigation'));
 
                             const content = document.createElement('div');
                             content.style.cssText = `
@@ -713,11 +800,11 @@ export default function MapView() {
 
                             const riskData = analysis.riskAssessment || {};
                             const riskItems = [
-                                { label: 'Environmental Risks', value: riskData.environmentalRisks || 'N/A', icon: '🌪️' },
-                                { label: 'Regulatory Risks', value: riskData.regulatoryRisks || 'N/A', icon: '📜' },
-                                { label: 'Market Risks', value: riskData.marketRisks || 'N/A', icon: '📈' },
-                                { label: 'Mitigation Strategies', value: riskData.mitigationStrategies || 'N/A', icon: '🛡️' },
-                                { label: 'Contingency Plans', value: riskData.contingencyPlans || 'N/A', icon: '🔄' }
+                                { label: 'Environmental Risks', value: riskData.environmentalRisks || 'N/A', icon: 'MdWarning' },
+                                { label: 'Regulatory Risks', value: riskData.regulatoryRisks || 'N/A', icon: 'MdGavel' },
+                                { label: 'Market Risks', value: riskData.marketRisks || 'N/A', icon: 'MdTrendingUp' },
+                                { label: 'Mitigation Strategies', value: riskData.mitigationStrategies || 'N/A', icon: 'MdShield' },
+                                { label: 'Contingency Plans', value: riskData.contingencyPlans || 'N/A', icon: 'MdRefresh' }
                             ];
 
                             riskItems.forEach(item => {
@@ -743,22 +830,23 @@ export default function MapView() {
                         // Helper function to create environmental impact section
                         const createEnvironmentalSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin: 0 0 32px 0;
-                                background: #ffffff;
-                                border: 1px solid #e5e7eb;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
                                 border-radius: 8px;
-                                padding: 24px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                color: #1f2937;
-                                border-bottom: 2px solid #e5e7eb;
-                                padding-bottom: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             title.textContent = 'Environmental Impact';
 
@@ -770,16 +858,16 @@ export default function MapView() {
                             `;
 
                             const metrics = [
-                                { label: 'Local Carbon Reduction', value: analysis.environmentalImpact?.localCarbonReduction || 'N/A', icon: '🌍' },
-                                { label: 'Neighborhood Air Quality', value: analysis.environmentalImpact?.neighborhoodAirQualityImprovement || 'N/A', icon: '🌬️' },
-                                { label: 'Local Biodiversity', value: analysis.environmentalImpact?.localBiodiversityEnhancement || 'N/A', icon: '🦋' },
-                                { label: 'Walkability Improvement', value: analysis.environmentalImpact?.walkabilityImprovement || 'N/A', icon: '🚶' },
-                                { label: 'Local Waste Diversion', value: analysis.environmentalImpact?.localWasteDiversion || 'N/A', icon: '♻️' },
-                                { label: 'Community Green Space', value: analysis.environmentalImpact?.communityGreenSpace || 'N/A', icon: '🌿' },
-                                { label: 'Neighborhood Noise Reduction', value: analysis.environmentalImpact?.neighborhoodNoiseReduction || 'N/A', icon: '🔇' },
-                                { label: 'Local Water Conservation', value: analysis.environmentalImpact?.localWaterConservation || 'N/A', icon: '💧' },
-                                { label: 'Transportation Efficiency', value: analysis.environmentalImpact?.transportationEfficiency || 'N/A', icon: '🚌' },
-                                { label: 'Community Education', value: analysis.environmentalImpact?.communityEnvironmentalEducation || 'N/A', icon: '📚' }
+                                { label: 'Local Carbon Reduction', value: analysis.environmentalImpact?.localCarbonReduction || 'N/A', icon: 'MdEco' },
+                                { label: 'Neighborhood Air Quality', value: analysis.environmentalImpact?.neighborhoodAirQualityImprovement || 'N/A', icon: 'MdAir' },
+                                { label: 'Local Biodiversity', value: analysis.environmentalImpact?.localBiodiversityEnhancement || 'N/A', icon: 'MdNature' },
+                                { label: 'Walkability Improvement', value: analysis.environmentalImpact?.walkabilityImprovement || 'N/A', icon: 'MdDirectionsWalk' },
+                                { label: 'Local Waste Diversion', value: analysis.environmentalImpact?.localWasteDiversion || 'N/A', icon: 'MdRecycling' },
+                                { label: 'Community Green Space', value: analysis.environmentalImpact?.communityGreenSpace || 'N/A', icon: 'MdPark' },
+                                { label: 'Neighborhood Noise Reduction', value: analysis.environmentalImpact?.neighborhoodNoiseReduction || 'N/A', icon: 'MdVolumeOff' },
+                                { label: 'Local Water Conservation', value: analysis.environmentalImpact?.localWaterConservation || 'N/A', icon: 'MdWater' },
+                                { label: 'Transportation Efficiency', value: analysis.environmentalImpact?.transportationEfficiency || 'N/A', icon: 'MdDirectionsBus' },
+                                { label: 'Community Education', value: analysis.environmentalImpact?.communityEnvironmentalEducation || 'N/A', icon: 'MdSchool' }
                             ];
 
                             metrics.forEach(metric => {
@@ -789,12 +877,20 @@ export default function MapView() {
                                     justify-content: space-between;
                                     align-items: center;
                                     padding: 12px 0;
-                                    border-bottom: 1px solid #f3f4f6;
+                                    border-bottom: 1px solid rgba(163, 230, 53, 0.2);
                                 `;
-                                metricDiv.innerHTML = `
-                                    <span style="font-weight: 500; color: #6b7280; font-size: 14px;">${metric.icon} ${metric.label}</span>
-                                    <span style="font-weight: 600; color: #1f2937; font-size: 14px;">${metric.value}</span>
-                                `;
+                                const labelSpan = document.createElement('span');
+                                labelSpan.style.cssText = `font-weight: 500; color: #E5F3D4; font-size: 14px; display: flex; align-items: center;`;
+                                const iconElement = createIconElement(metric.icon, 16);
+                                if (iconElement) labelSpan.appendChild(iconElement);
+                                labelSpan.appendChild(document.createTextNode(` ${metric.label}`));
+                                
+                                const valueSpan = document.createElement('span');
+                                valueSpan.style.cssText = `font-weight: 600; color: #FFFFFF; font-size: 14px;`;
+                                valueSpan.textContent = metric.value;
+                                
+                                metricDiv.appendChild(labelSpan);
+                                metricDiv.appendChild(valueSpan);
                                 grid.appendChild(metricDiv);
                             });
 
@@ -806,20 +902,23 @@ export default function MapView() {
                         // Helper function to create business analysis section
                         const createBusinessSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                height: 100%;
-                                display: flex;
-                                flex-direction: column;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 22px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 24px;
-                                color: #1f2937;
-                                border-bottom: 2px solid #e5e7eb;
-                                padding-bottom: 12px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             title.textContent = 'Business Analysis';
 
@@ -873,13 +972,13 @@ export default function MapView() {
                                     justify-content: space-between;
                                     align-items: center;
                                     padding: 12px 0;
-                                    border-bottom: 1px solid #f3f4f6;
+                                    border-bottom: 1px solid rgba(163, 230, 53, 0.2);
                                 `;
 
                                 const label = document.createElement('span');
                                 label.style.cssText = `
                                     font-weight: 500;
-                                    color: #6b7280;
+                                    color: #E5F3D4;
                                     font-size: 14px;
                                 `;
                                 label.textContent = metric.label;
@@ -887,7 +986,7 @@ export default function MapView() {
                                 const value = document.createElement('span');
                                 value.style.cssText = `
                                     font-weight: 600;
-                                    color: #1f2937;
+                                    color: #FFFFFF;
                                     font-size: 14px;
                                     text-align: right;
                                     max-width: 60%;
@@ -907,24 +1006,28 @@ export default function MapView() {
                         // Helper function to create community benefits section
                         const createCommunitySection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                margin-bottom: 30px;
-                                background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-                                border-radius: 12px;
-                                padding: 24px;
-                                color: white;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
-                            title.innerHTML = '🏘️ Community Benefits';
+                            title.innerHTML = '';
+                            const iconElement4 = createIconElement('MdGroup', 20);
+                            if (iconElement4) title.appendChild(iconElement4);
+                            title.appendChild(document.createTextNode(' Community Benefits'));
 
                             const content = document.createElement('div');
                             content.style.cssText = `
@@ -934,10 +1037,10 @@ export default function MapView() {
                             `;
 
                             const metrics = [
-                                { label: 'Jobs Created', value: analysis.communityBenefits?.jobCreation || 'N/A', icon: '👥' },
-                                { label: 'Economic Impact', value: analysis.communityBenefits?.localEconomicImpact || 'N/A', icon: '💰' },
-                                { label: 'Community Engagement', value: analysis.communityBenefits?.communityEngagement || 'N/A', icon: '🤝' },
-                                { label: 'Accessibility', value: analysis.communityBenefits?.accessibilityImprovements || 'N/A', icon: '♿' }
+                                { label: 'Jobs Created', value: analysis.communityBenefits?.jobCreation || 'N/A', icon: 'MdPeople' },
+                                { label: 'Economic Impact', value: analysis.communityBenefits?.localEconomicImpact || 'N/A', icon: 'MdAttachMoney' },
+                                { label: 'Community Engagement', value: analysis.communityBenefits?.communityEngagement || 'N/A', icon: 'MdHandshake' },
+                                { label: 'Accessibility', value: analysis.communityBenefits?.accessibilityImprovements || 'N/A', icon: 'MdAccessibility' }
                             ];
 
                             metrics.forEach(metric => {
@@ -963,24 +1066,28 @@ export default function MapView() {
                         // Helper function to create recommendations section
                         const createRecommendationsSection = (analysis: any) => {
                             const section = document.createElement('div');
+                            // minimal section + title — use in every create*Section
                             section.style.cssText = `
-                                background: rgba(255, 255, 255, 0.8);
-                                border-radius: 12px;
-                                padding: 24px;
-                                border-left: 4px solid #f59e0b;
+                                margin-bottom: 12px;
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border: 1px solid rgba(163, 230, 53, 0.15);
+                                border-radius: 8px;
+                                padding: 14px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                             `;
 
                             const title = document.createElement('h3');
                             title.style.cssText = `
-                                font-size: 20px;
+                                font-size: 16px;
                                 font-weight: 600;
-                                margin-bottom: 20px;
-                                color: #1f2937;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
+                                margin-bottom: 10px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
-                            title.innerHTML = '💡 Recommendations';
+                            title.innerHTML = '';
+                            const iconElement5 = createIconElement('MdLightbulb', 20);
+                            if (iconElement5) title.appendChild(iconElement5);
+                            title.appendChild(document.createTextNode(' Recommendations'));
 
                             const list = document.createElement('ul');
                             list.style.cssText = `
@@ -994,14 +1101,14 @@ export default function MapView() {
                                 const item = document.createElement('li');
                                 item.style.cssText = `
                                     padding: 8px 0;
-                                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                                    border-bottom: 1px solid rgba(163, 230, 53, 0.2);
                                     display: flex;
                                     align-items: flex-start;
                                     gap: 8px;
                                 `;
                                 item.innerHTML = `
-                                    <span style="color: #f59e0b; font-weight: bold;">${index + 1}.</span>
-                                    <span style="color: #374151;">${rec}</span>
+                                    <span style="color: #A3E635; font-weight: bold;">${index + 1}.</span>
+                                    <span style="color: #FFFFFF;">${rec}</span>
                                 `;
                                 list.appendChild(item);
                             });
@@ -1040,20 +1147,21 @@ export default function MapView() {
 
                             // Create modal content
                             const modalContent = document.createElement('div');
+                            // replace modalContent.style.cssText
                             modalContent.style.cssText = `
-                                background: rgba(255, 255, 255, 0.98);
-                                backdrop-filter: blur(20px);
-                                border: 1px solid rgba(0, 0, 0, 0.08);
-                                border-radius: 24px;
+                                background: linear-gradient(135deg, #1A362D 0%, #2D4A3E 50%, #3E5B4F 100%);
+                                border-radius: 12px;
                                 width: 95%;
-                                max-width: 1400px;
-                                height: 90%;
-                                max-height: 900px;
+                                max-width: 1100px;
+                                height: 90vh;
                                 display: flex;
                                 flex-direction: column;
-                                overflow: hidden;
-                                box-shadow: 0 32px 100px rgba(0, 0, 0, 0.12);
+                                padding: 16px;
+                                overflow: auto;               /* single scroll for entire modal */
+                                box-shadow: 0 12px 40px rgba(0,0,0,0.4);
                                 position: relative;
+                                color: #FFFFFF;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
 
                             // Close button for modal
@@ -1099,35 +1207,38 @@ export default function MapView() {
 
                             // Top section container
                             const topSection = document.createElement('div');
+                            // replace topSection.style.cssText
                             topSection.style.cssText = `
                                 display: flex;
-                                height: 45%;
-                                min-height: 400px;
-                                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                                gap: 20px;
+                                align-items: flex-start;
+                                margin-bottom: 12px;
+                                flex: 0 0 auto;
                             `;
 
                             // Left side - Model viewer
                             const leftSide = document.createElement('div');
+                            // replace leftSide.style.cssText
                             leftSide.style.cssText = `
-                                flex: 1;
+                                flex: 0 0 420px;              /* fixed-ish column for model */
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
-                                justify-content: center;
-                                padding: 40px;
-                                background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-                                border-right: 1px solid rgba(0, 0, 0, 0.06);
+                                padding: 12px;
+                                background: transparent;
+                                border-right: 1px solid #eef2f6;
+                                min-width: 320px;
                             `;
 
                             const modelTitle = document.createElement('h2');
                             modelTitle.style.cssText = `
-                                color: #1f2937;
+                                color: #FFFFFF;
                                 font-size: 28px;
                                 font-weight: 600;
                                 margin-bottom: 24px;
                                 text-align: center;
                                 letter-spacing: -0.3px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                                 line-height: 1.2;
                             `;
                             modelTitle.textContent = label;
@@ -1140,14 +1251,15 @@ export default function MapView() {
                             modelViewer.setAttribute('background-color', 'transparent');
                             modelViewer.setAttribute('camera-controls', '');
                             modelViewer.setAttribute('touch-action', 'pan-y');
+                            // replace modelViewer.style.cssText
                             modelViewer.style.cssText = `
                                 width: 100%;
-                                height: 300px;
-                                max-width: 400px;
-                                border-radius: 20px;
+                                height: 320px;
+                                max-width: 360px;
+                                border-radius: 12px;
                                 overflow: hidden;
-                                box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-                                border: 1px solid rgba(0, 0, 0, 0.06);
+                                box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+                                border: 1px solid #eef2f6;
                             `;
 
                             leftSide.appendChild(modelTitle);
@@ -1155,63 +1267,67 @@ export default function MapView() {
 
                             // Right side - Business Analysis
                             const rightSide = document.createElement('div');
+                            // replace rightSide.style.cssText
                             rightSide.style.cssText = `
                                 flex: 1;
-                                padding: 40px;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                color: #374151;
-                                overflow-y: auto;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                                background: linear-gradient(135deg, #ffffff, #f8fafc);
+                                padding: 12px;
+                                display: block;               /* let modal handle scrolling */
+                                color: #FFFFFF;
+                                overflow: visible;            /* IMPORTANT: remove inner scrolls */
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 100%);
+                                border-radius: 8px;
+                                border: 1px solid rgba(163, 230, 53, 0.2);
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
 
                             // Add loading state with progress bar
                             const loadingDiv = document.createElement('div');
+                            // compact loading block
                             loadingDiv.style.cssText = `
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
                                 justify-content: center;
-                                height: 100%;
+                                width: 100%;
+                                padding: 12px 0;
                                 text-align: center;
-                                padding: 40px;
                             `;
 
                             const loadingText = document.createElement('div');
                             loadingText.style.cssText = `
-                                font-size: 20px;
-                                color: #374151;
+                                font-size: 15px;
+                                color: #F0F9E8;
                                 font-weight: 500;
-                                margin-bottom: 30px;
+                                margin-bottom: 12px;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             loadingText.textContent = 'Analyzing environmental impact...';
 
                             const progressContainer = document.createElement('div');
                             progressContainer.style.cssText = `
                                 width: 100%;
-                                max-width: 400px;
+                                max-width: 360px;
                                 background: #f3f4f6;
-                                border-radius: 8px;
+                                border-radius: 6px;
                                 height: 8px;
                                 overflow: hidden;
-                                margin-bottom: 20px;
+                                margin-bottom: 8px;
                             `;
 
                             const progressBar = document.createElement('div');
                             progressBar.style.cssText = `
                                 width: 0%;
                                 height: 100%;
-                                background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-                                border-radius: 8px;
+                                background: linear-gradient(90deg, #A3E635, #84CC16); /* green gradient */
+                                border-radius: 6px;
                                 transition: width 0.3s ease;
                             `;
 
                             const progressText = document.createElement('div');
                             progressText.style.cssText = `
-                                font-size: 14px;
-                                color: #6b7280;
+                                font-size: 13px;
+                                color: #E5F3D4;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             progressText.textContent = 'Processing data...';
 
@@ -1250,23 +1366,23 @@ export default function MapView() {
                             document.head.appendChild(style);
 
                             const infoTitle = document.createElement('h3');
+                            // replace infoTitle style
                             infoTitle.style.cssText = `
-                                font-size: 28px;
+                                font-size: 18px;
                                 font-weight: 600;
-                                margin-bottom: 40px;
-                                color: #1f2937;
-                                letter-spacing: -0.3px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                                line-height: 1.3;
+                                margin-bottom: 12px;
+                                color: #A3E635;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
                             infoTitle.textContent = 'Building Information';
 
                             const infoContent = document.createElement('div');
+                            // replace infoContent style
                             infoContent.style.cssText = `
                                 display: flex;
                                 flex-direction: column;
-                                gap: 24px;
-                                flex: 1;
+                                gap: 10px;
+                                width: 100%;
                             `;
 
                             // Add building properties
@@ -1281,36 +1397,37 @@ export default function MapView() {
 
                             properties.forEach(prop => {
                                 const propertyDiv = document.createElement('div');
-                                propertyDiv.style.cssText = `
-                                    background: rgba(255, 255, 255, 0.8);
-                                    padding: 20px 24px;
-                                    border-radius: 12px;
-                                    border-left: 4px solid #3b82f6;
-                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                                    border: 1px solid rgba(0, 0, 0, 0.06);
-                                `;
+                                // replace propertyDiv.style.cssText inside properties.forEach
+                            propertyDiv.style.cssText = `
+                                background: linear-gradient(135deg, #2D4A3E 0%, #3E5B4F 100%);
+                                padding: 10px 14px;
+                                border-radius: 8px;
+                                border: 1px solid rgba(163, 230, 53, 0.2);
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                            `;
 
                                 const keySpan = document.createElement('span');
+                                // replace keySpan / valueSpan small adjustments
                                 keySpan.style.cssText = `
                                     font-weight: 600;
-                                    color: #6b7280;
+                                    color: #E5F3D4;
                                     display: block;
-                                    margin-bottom: 8px;
-                                    font-size: 13px;
+                                    margin-bottom: 6px;
+                                    font-size: 12px;
                                     text-transform: uppercase;
-                                    letter-spacing: 0.5px;
-                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                                    letter-spacing: 0.4px;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                                 `;
                                 keySpan.textContent = prop.key;
 
                                 const valueSpan = document.createElement('span');
                                 valueSpan.style.cssText = `
-                                    color: #1f2937;
-                                    font-size: 16px;
+                                    color: #FFFFFF;
+                                    font-size: 14px;
                                     display: block;
-                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                                     font-weight: 500;
-                                    line-height: 1.4;
+                                    line-height: 1.3;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                                 `;
                                 valueSpan.textContent = prop.value;
 
@@ -1321,49 +1438,48 @@ export default function MapView() {
 
                             // Add action buttons
                             const actionButtons = document.createElement('div');
+                            // replace actionButtons.style.cssText
                             actionButtons.style.cssText = `
-                                margin-top: 40px;
+                                margin-top: 18px;
                                 display: flex;
-                                gap: 16px;
+                                gap: 10px;
                                 flex-wrap: wrap;
-                                padding-top: 24px;
-                                border-top: 1px solid rgba(0, 0, 0, 0.08);
+                                padding-top: 12px;
+                                border-top: 1px solid rgba(163, 230, 53, 0.2);
                             `;
 
                             const viewDetailsBtn = document.createElement('button');
                             viewDetailsBtn.textContent = 'View Details';
+                            // replace viewDetailsBtn / contactBtn styles (more subtle)
                             viewDetailsBtn.style.cssText = `
-                                background: #3b82f6;
-                                color: white;
+                                background: linear-gradient(135deg, #A3E635 0%, #84CC16 100%);
+                                color: #1A362D;
                                 border: none;
-                                padding: 14px 28px;
-                                border-radius: 10px;
-                                font-size: 15px;
+                                padding: 10px 18px;
+                                border-radius: 8px;
+                                font-size: 14px;
                                 font-weight: 600;
                                 cursor: pointer;
-                                transition: all 0.3s ease;
-                                flex: 1;
-                                min-width: 140px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                                min-width: 120px;
+                                box-shadow: 0 2px 8px rgba(163, 230, 53, 0.3);
+                                transition: all 0.2s ease;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
 
                             const contactBtn = document.createElement('button');
                             contactBtn.textContent = 'Contact';
                             contactBtn.style.cssText = `
-                                background: rgba(255, 255, 255, 0.8);
-                                color: #374151;
-                                border: 1px solid rgba(0, 0, 0, 0.1);
-                                padding: 14px 28px;
-                                border-radius: 10px;
-                                font-size: 15px;
+                                background: transparent;
+                                color: #FFFFFF;
+                                border: 1px solid rgba(163, 230, 53, 0.4);
+                                padding: 10px 18px;
+                                border-radius: 8px;
+                                font-size: 14px;
                                 font-weight: 600;
                                 cursor: pointer;
-                                transition: all 0.3s ease;
-                                flex: 1;
-                                min-width: 140px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                                min-width: 120px;
+                                transition: all 0.2s ease;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
 
                             [viewDetailsBtn, contactBtn].forEach(btn => {
@@ -1398,11 +1514,19 @@ export default function MapView() {
 
                             // Bottom section for environmental results
                             const bottomSection = document.createElement('div');
+                            // replace bottomSection.style.cssText
                             bottomSection.style.cssText = `
-                                flex: 1;
-                                padding: 32px;
-                                overflow-y: auto;
-                                background: #ffffff;
+                                flex: 1 0 auto;
+                                padding: 16px;
+                                overflow: visible;            /* allow the modal to scroll */
+                                background: linear-gradient(135deg, #1F2F26 0%, #2D4A3E 100%);
+                                border-radius: 8px;
+                                border: 1px solid rgba(163, 230, 53, 0.2);
+                                display: flex;
+                                flex-direction: column;
+                                gap: 12px;
+                                margin-top: 12px;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
                             `;
 
                             modalContent.appendChild(modalCloseButton);
@@ -1438,7 +1562,8 @@ export default function MapView() {
                                 const businessSection = createBusinessSection(analysis);
                                 rightSide.appendChild(businessSection);
 
-                                // Create environmental futures simulation section for bottom
+                                // Create 
+                                // tion section for bottom
                                 const futuresSection = createEnvironmentalFuturesSection(analysis);
                                 bottomSection.appendChild(futuresSection);
 
@@ -1478,8 +1603,10 @@ export default function MapView() {
                                     color: #ef4444;
                                 `;
                                 errorDiv.innerHTML = `
-                                    <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
-                                    <div style="font-size: 18px; font-weight: 500;">Unable to analyze location</div>
+                                    <div style="font-size: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                        <div style="margin-right: 8px; color: #f59e0b;">⚠️</div>
+                                        Unable to analyze location
+                                    </div>
                                     <div style="font-size: 14px; color: #6b7280; margin-top: 8px;">Please try again later</div>
                                 `;
                                 bottomSection.appendChild(errorDiv);

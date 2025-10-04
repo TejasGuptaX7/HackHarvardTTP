@@ -1,74 +1,19 @@
-// ServicesDetailed.jsx (Updated version)
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+// ServicesDetailed.jsx (with research papers)
+import React from "react";
+import Link from "next/link";
 
-interface ServiceCard {
-  title: string;
-  image: string;
-  isGif?: boolean;
-  services: string[];
-  link: string;
-  bgColor: string;
-  textColor: string;
-  listColor: string;
-}
-
-const serviceCards: ServiceCard[] = [
+const researchPapers = [
   {
-    title: "Location Intelligence",
-    image: "https://framerusercontent.com/images/1xX3xW5goqn2AoyZTtsBwXveZw.png",
-    services: ["Foot Traffic Analysis", "Demographics", "Competition Mapping", "Market Saturation", "Customer Profiles", "Revenue Projections"],
-    link: "/location-intelligence",
-    bgColor: "bg-[#0d2f2f]",
-    textColor: "text-white",
-    listColor: "text-[rgb(255,255,255,0.7)]",
+    href: "/ResearchPaper1.pdf",
+    title: "Evidence for Urban Sustainability Interventions",
+    blurb:
+      "A peer-reviewed analysis of green-roof and transit-oriented interventions and their quantified benefits in Northeastern US urban neighborhoods.",
   },
   {
-    title: "Sustainability Metrics",
-    image: "https://framerusercontent.com/images/YpCUooQAmKKJCOLZQXUGm0Ur08.png?scale-down-to=512",
-    services: ["Carbon Footprint", "Waste Management", "Energy Efficiency", "Public Transit Access", "Green Building Score", "Solar Potential", "Tree Coverage"],
-    link: "/sustainability",
-    bgColor: "bg-[#2a2a2a]",
-    textColor: "text-white",
-    listColor: "text-[rgb(255,255,255,0.7)]",
-  },
-  {
-    title: "Risk Assessment",
-    image: "https://framerusercontent.com/images/OMIsUG3uPCnuEaIwbP5fhrQz8W4.png",
-    services: ["Zoning Compliance", "Safety Scores", "Natural Hazards", "Insurance Costs", "Permit Requirements", "Future Development"],
-    link: "/risk-assessment",
-    bgColor: "bg-[#0d2f2f]",
-    textColor: "text-white",
-    listColor: "text-[rgb(255,255,255,0.7)]",
-  },
-  {
-    title: "3D Visualization",
-    image: "https://framerusercontent.com/images/xyeA2TNLVXIwqYkDNQqV3qaFc.png",
-    services: ["Interactive Maps", "Building Models", "Neighborhood Views", "Traffic Patterns", "Environmental Impact Zones"],
-    link: "/visualization",
-    bgColor: "bg-[#2a2a2a]",
-    textColor: "text-white",
-    listColor: "text-[rgb(255,255,255,0.7)]",
-  },
-  {
-    title: "AI Recommendations",
-    image: "https://framerusercontent.com/images/vj11kWb4zSBN5hTooZVf2xjfA.gif?scale-down-to=512",
-    isGif: true,
-    services: ["Smart Matching", "Predictive Analytics", "Custom Scoring", "Opportunity Alerts", "Market Trends", "Growth Projections"],
-    link: "/ai-recommendations",
-    bgColor: "bg-[#d4f6a8]",
-    textColor: "text-[#0d2f2f]",
-    listColor: "text-[#0d2f2f]/80",
-  },
-  {
-    title: "Export & Reports",
-    image: "https://framerusercontent.com/images/4quMGe6lShMNTIF9hXw1NknHYQ.png",
-    services: ["One-Page Briefs", "Investment Decks", "Sustainability Reports", "ROI Analysis", "Comparison Charts"],
-    link: "/reports",
-    bgColor: "bg-[#0d2f2f]",
-    textColor: "text-white",
-    listColor: "text-[rgb(255,255,255,0.7)]",
+    href: "/ResearchPaper2.pdf",
+    title: "Carbon & Community: Measuring Local Impact",
+    blurb:
+      "A multi-year study demonstrating carbon reduction and community co-benefits from localized sustainability programs across major US cities.",
   },
 ];
 
@@ -85,42 +30,67 @@ const ServicesDetailed = () => {
   return (
     <>
       <section id="services" className="bg-[#f5e8dd] py-16 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
           <div className="bg-[#0d2f2f] text-white text-sm font-medium rounded-full px-4 py-2 inline-block mb-6">
-            Platform
+            Research
           </div>
-          <h2 className="font-sans text-[#0d2f2f] text-[40px] md:text-5xl lg:text-[56px] leading-none font-normal">
-            Everything you need to<br />
-            <span className="font-serif italic">make the right choice</span>
+
+          <h2 className="font-sans text-[#0d2f2f] text-[40px] md:text-5xl lg:text-[56px] leading-none font-normal mb-12">
+            Don't believe us,
+            <br />
+            <span className="font-serif italic">believe them.</span>
           </h2>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 md:mt-16">
-            {serviceCards.map((card, index) => (
-              <Link href={card.link} key={index} className="block group">
-                <div className={`h-full flex flex-col rounded-3xl p-10 text-left transition-transform duration-300 ease-in-out group-hover:-translate-y-1 group-hover:shadow-xl ${card.bgColor}`}>
-                  <div className="mb-8 overflow-hidden rounded-lg">
-                    <Image
-                      src={card.image}
-                      alt={`${card.title} preview`}
-                      width={500}
-                      height={230}
-                      className="w-full h-[230px] object-cover"
-                      unoptimized={card.isGif}
-                    />
-                  </div>
-                  <h3 className={`font-display text-[32px] font-bold ${card.textColor}`}>
-                    {card.title}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {researchPapers.map((paper, idx) => (
+              <article
+                key={idx}
+                className="bg-white rounded-2xl shadow-sm border border-[#e5e7eb] p-6 flex flex-col gap-4 transition-transform hover:-translate-y-1 hover:shadow-md"
+              >
+                {/* PDF Preview */}
+                <div className="w-full overflow-hidden rounded-lg border border-[#e5e7eb]">
+                  <iframe
+                    src={`${paper.href}#toolbar=0&navpanes=0&scrollbar=0`}
+                    title={paper.title}
+                    className="w-full h-[180px] border-0"
+                  />
+                </div>
+
+                {/* Text Content */}
+                <div className="flex flex-col justify-between flex-grow text-left">
+                  <h3 className="text-[20px] font-semibold text-[#0d2f2f]">
+                    {paper.title}
                   </h3>
-                  <p className={`mt-4 text-base font-normal leading-relaxed ${card.listColor}`}>
-                    {card.services.join(" • ")}
+                  <p className="mt-2 text-sm text-[#374151] leading-relaxed">
+                    {paper.blurb}
                   </p>
                 </div>
-              </Link>
+
+                {/* Buttons */}
+                <div className="flex items-center gap-3 mt-4">
+                  <a
+                    href={paper.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-md text-sm font-semibold bg-[#0d2f2f] text-white hover:opacity-90 transition"
+                  >
+                    Read full paper
+                  </a>
+                  <a
+                    href={paper.href}
+                    download
+                    className="px-4 py-2 rounded-md text-sm font-medium border border-[#0d2f2f]/20 text-[#0d2f2f] hover:bg-[#0d2f2f]/5 transition"
+                  >
+                    Download
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Industry Filters (unchanged) */}
       <section className="bg-brand-primary-bg py-16 px-6">
         <div className="max-w-7xl mx-auto bg-white rounded-[40px] p-8 md:p-12">
           <div className="text-center mb-8">
