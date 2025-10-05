@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const WORKER_URL = process.env.WORKER_URL || 'http://localhost:8787';
+const WORKER_URL = process.env.WORKER_URL || 'https://eco-spirit-worker.phegde9.workers.dev';
 
 interface Recommendation {
   buildingId: number;
