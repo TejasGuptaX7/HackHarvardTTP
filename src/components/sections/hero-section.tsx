@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const VideoHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -116,6 +117,9 @@ const VideoShowcase = () => {
 
 const HeroSection = () => {
   const [videoVisible, setVideoVisible] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,6 +129,48 @@ const HeroSection = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      setIsUploading(true);
+      
+      try {
+        const formData = new FormData();
+        for (let i = 0; i < files.length; i++) {
+          formData.append('files', files[i]);
+        }
+
+        const response = await fetch('/api/upload-files', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log('Files uploaded successfully:', result);
+          // Redirect to processing page
+          router.push('/processing');
+        } else {
+          console.error('Upload failed');
+          alert('Failed to upload files. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error uploading files:', error);
+        alert('Error uploading files. Please try again.');
+      } finally {
+        setIsUploading(false);
+        // Reset the file input
+        if (fileInputRef.current) {
+          fileInputRef.current.value = '';
+        }
+      }
+    }
+  };
+
+  const handleAddFilesClick = () => {
+    fileInputRef.current?.click();
+  };
 
   return (
     <>
@@ -169,6 +215,21 @@ const HeroSection = () => {
             >
               View Demo
             </Link>
+            <button
+              onClick={handleAddFilesClick}
+              disabled={isUploading}
+              className="bg-transparent border-2 border-[#D4FF5C] text-[#D4FF5C] font-inter text-lg py-4 px-10 rounded-full transition-all duration-500 hover:scale-[1.08] hover:bg-[#D4FF5C] hover:text-[#0D3028] hover:shadow-[0_0_20px_rgba(212,255,92,0.5)] w-full sm:w-auto text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            >
+              {isUploading ? 'Uploading...' : 'Add Files'}
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".jpg,.jpeg,.png,.heic,.heif,.mp4,.mov,.avi,.webm,.mkv"
+              multiple
+              onChange={handleFileUpload}
+              className="hidden"
+            />
           </div>
         </div>
       </section>
