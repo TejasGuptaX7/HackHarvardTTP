@@ -1,6 +1,40 @@
 {
-  "timestamp": "2025-10-05T01:54:15.709Z",
+  "timestamp": "2025-10-05T02:09:43.738Z",
   "recommendations": [
-    
+    {
+      "buildingId": 51,
+      "reason": "One Kendall Square Building 100 has high walkability and transit access, making it ideal for a restaurant.",
+      "score": 85,
+      "address": "One Kendall Square Building 100",
+      "district": "Kendall Square"
+    },
+    {
+      "buildingId": 93,
+      "reason": "One Kendall Square Building 300 has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+      "score": 82,
+      "address": "One Kendall Square Building 300",
+      "district": "Kendall Square"
+    },
+    {
+      "buildingId": 49,
+      "reason": "250 Water Street has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+      "score": 80,
+      "address": "250 Water Street",
+      "district": "East Cambridge"
+    },
+    {
+      "buildingId": 76,
+      "reason": "One Canal Park has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+      "score": 78,
+      "address": "One Canal Park",
+      "district": "East Cambridge"
+    },
+    {
+      "buildingId": 77,
+      "reason": "222 Jacobs Street has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+      "score": 77,
+      "address": "222 Jacobs Street, Retail 4",
+      "district": "East Cambridge"
+    }
   ]
 }

@@ -387,8 +387,8 @@
         "Dataset Date": "September 2025",
         "Image": null,
         "recommended": false,
-        "recommendationReason": "With a Green Score of 69 and proximity to East Cambridge's residential areas, this location offers a great balance of foot traffic and sustainability.",
-        "recommendationScore": 88
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -627,8 +627,8 @@
         "Dataset Date": "September 2025",
         "Image": null,
         "recommended": false,
-        "recommendationReason": "High foot traffic, proximity to Harvard University, and a Green Score of 67 make this location ideal for a boba shop.",
-        "recommendationScore": 92
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -837,8 +837,8 @@
         "Dataset Date": "September 2025",
         "Image": null,
         "recommended": false,
-        "recommendationReason": "This spot in East Cambridge has a Green Score of 70 and is close to the Lechmere T stop, making it an ideal location for a boba shop with high foot traffic.",
-        "recommendationScore": 87
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1466,9 +1466,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/250_Water_Street_20240212_1.jpg",
-        "recommended": false,
-        "recommendationReason": "",
-        "recommendationScore": null
+        "recommended": true,
+        "recommendationReason": "250 Water Street has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+        "recommendationScore": 80
       }
     },
     {
@@ -1526,9 +1526,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false,
-        "recommendationReason": "Located in Kendall Square, this spot has high foot traffic, a Green Score of 77, and proximity to tech companies and startups.",
-        "recommendationScore": 92
+        "recommended": true,
+        "recommendationReason": "One Kendall Square Building 100 has high walkability and transit access, making it ideal for a restaurant.",
+        "recommendationScore": 85
       }
     },
     {
@@ -2276,9 +2276,9 @@
         "Leasing Contact": "Ann Ehrhart, ann@everstreet.co, (617) 895-9789",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false,
-        "recommendationReason": "",
-        "recommendationScore": null
+        "recommended": true,
+        "recommendationReason": "One Canal Park has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+        "recommendationScore": 78
       }
     },
     {
@@ -2306,9 +2306,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false,
-        "recommendationReason": "",
-        "recommendationScore": null
+        "recommended": true,
+        "recommendationReason": "222 Jacobs Street has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+        "recommendationScore": 77
       }
     },
     {
@@ -2457,8 +2457,8 @@
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1095_Camb%20ridge_Street_20240212_2.jpg",
         "recommended": false,
-        "recommendationReason": "In the heart of Central Square, this location has high foot traffic, a Green Score of 71, and a vibrant atmosphere perfect for a boba shop.",
-        "recommendationScore": 90
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2786,9 +2786,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false,
-        "recommendationReason": "",
-        "recommendationScore": null
+        "recommended": true,
+        "recommendationReason": "One Kendall Square Building 300 has a high walkability score and is close to public transportation, making it a great location for a restaurant.",
+        "recommendationScore": 82
       }
     },
     {

@@ -28,9 +28,9 @@ const FinalCta: React.FC = () => {
         </p>
         <Link
           href="/Mapbox"
-          className="mt-10 inline-block rounded-full bg-primary py-[18px] px-12 text-lg font-bold text-primary-foreground transition-all duration-300 ease-in-out hover:scale-[1.03] hover:brightness-105"
+          className="bg-[#D4FF5C] text-[#0D3028] font-inter text-lg py-4 px-10 rounded-full transition-all duration-500 hover:scale-[1.08] hover:shadow-[0_0_20px_rgba(212,255,92,0.5)] w-full sm:w-auto text-center"
         >
-          Try Demo
+          View Demo
         </Link>
       </div>
     </section>

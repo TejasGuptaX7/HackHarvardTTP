@@ -15,8 +15,8 @@ export default function HomePage() {
         <VideoHeroSection />
         
         <ServicesMarquee />
-        <MembershipBenefits />
         <ServicesDetailed />
+        <MembershipBenefits />
         <FinalCta />
       </main>
     </div>
