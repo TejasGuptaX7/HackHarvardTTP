@@ -1,78 +1,52 @@
 "use client";
-import React, { Suspense, useRef, useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Model3D from "@/components/Model3D";
 
-// Component to reset camera position on mount
+// Icons (feather)
+import { FiThermometer, FiCamera, FiAlertCircle, FiWind, FiCheckCircle, FiX } from "react-icons/fi";
+
+/** Reset camera position on mount */
 const CameraReset = () => {
   const { camera } = useThree();
-  
+
   useEffect(() => {
-    // Reset camera position to origin
     camera.position.set(0, 0, 0);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
   }, [camera]);
-  
+
   return null;
 };
 
 const ResultPage = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  useEffect(() => {
-    // Only reload once - check if we've already reloaded
-    if (!sessionStorage.getItem('hasReloaded')) {
-      sessionStorage.setItem('hasReloaded', 'true');
-      window.location.reload();
-    }
-
-    // Reset the flag when user navigates away from this page
-    const handleBeforeUnload = () => {
-      sessionStorage.removeItem('hasReloaded');
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
-
   const handleAnalyseClick = () => {
     setIsModalOpen(true);
   };
 
   return (
-    <div className="w-full h-screen bg-[#0D3028] relative">
+    <div className="w-full h-screen bg-[#07251F] relative font-sans">
+      {/* 3D canvas */}
       <Canvas
-        camera={{ 
-          position: [0, 0, 0], 
+        camera={{
+          position: [0, 0, 0],
           fov: 50,
           near: 0.1,
-          far: 1000
+          far: 1000,
         }}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: "100%", height: "100%" }}
       >
-        {/* Lighting */}
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <pointLight position={[-10, -10, -5]} intensity={0.5} />
-        
-        {/* Environment for better reflections */}
         <Environment preset="studio" />
-        
-        {/* Reset camera position on mount */}
         <CameraReset />
-        
-        {/* 3D Model */}
         <Suspense fallback={null}>
           <Model3D modelPath="/Untitled.glb" />
         </Suspense>
-        
-        {/* Camera controls - zoomed in and restricted */}
         <OrbitControls
           enablePan={false}
           enableZoom={true}
@@ -84,169 +58,220 @@ const ResultPage = () => {
           autoRotate={false}
         />
       </Canvas>
-      
-      {/* Analyse Button - Bottom Center */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button 
+
+      {/* Analyze Button */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <button
           onClick={handleAnalyseClick}
-          className="bg-[#D4FF5C]/10 backdrop-blur-md border border-[#D4FF5C]/20 text-black font-inter text-lg py-4 px-8 rounded-full transition-all duration-500 hover:scale-[1.08] hover:bg-[#D4FF5C]/20 hover:shadow-[0_0_20px_rgba(212,255,92,0.5)] shadow-lg"
+          aria-label="Open analysis"
+          className="inline-flex items-center gap-3 bg-[#1A4A2A] border border-white/10 text-[#D4FF5C] text-base py-3 px-7 rounded-full shadow-lg backdrop-blur-sm transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#D4FF5C]/30"
         >
-          Analyse
+          <FiCheckCircle className="w-5 h-5 text-[#D4FF5C]" />
+          <span className="font-medium">Analyse</span>
         </button>
       </div>
 
-      {/* Environmental Impact Analysis Modal */}
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-[#0D3028] border border-[#D4FF5C]/20 rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-[0_0_25px_rgba(212,255,92,0.15)]">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-[#D4FF5C] text-3xl font-bold">🌡️ Energy Leak Analysis</h2>
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="text-white/60 hover:text-white text-2xl transition-colors"
-              >
-                ×
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+          {/* backdrop */}
+          <div
+            className="absolute inset-0 bg-black/55 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          />
 
-            {/* Analysis Results */}
-            <div className="space-y-6">
-              {/* Problem Statement */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <h3 className="text-white text-xl font-semibold mb-3">🏨 Hotel Room Thermal Analysis</h3>
-                <p className="text-white/80 leading-relaxed">
-                  We analyzed the 3D model and captured thermal imaging of the hotel room you stayed at. Our heat signature analysis reveals significant energy leaks causing HVAC system inefficiency.
-                </p>
+          {/* Glass panel */}
+          <div className="relative z-10 w-full max-w-6xl max-h-[95vh] overflow-y-auto rounded-3xl p-8">
+            <div className="bg-[rgba(6,26,23,0.85)] border border-white/8 rounded-2xl p-6 backdrop-blur-[6px] shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+              {/* Header */}
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-white/6">
+                    <FiThermometer className="w-6 h-6 text-[#D4FF5C]" />
+                  </div>
+                  <div>
+                    <h2 className="text-white text-2xl font-semibold leading-tight">
+                      Energy Leak Analysis
+                    </h2>
+                    <p className="text-white/70 text-sm">
+                      Thermal scan & HVAC efficiency overview
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="p-2 rounded-md hover:bg-white/6 transition-colors"
+                >
+                  <FiX className="w-6 h-6 text-white/70" />
+                </button>
               </div>
 
-              {/* Thermography Image */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <h4 className="text-white text-lg font-semibold mb-4">📸 Thermal Imaging Analysis</h4>
-                <div className="relative">
-                  <img 
-                    src="/thermography-building-infratec-building-facade-04.png" 
-                    alt="Thermal imaging of hotel room showing heat signatures"
-                    className="w-full h-auto rounded-xl border border-white/20"
-                  />
-                  <div className="absolute top-4 left-4 bg-red-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    🔥 High Heat Signature
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-blue-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    ❄️ Cool Zones
-                  </div>
-                </div>
-                <p className="text-white/70 text-sm mt-3">
-                  Red zones indicate heat leaks, blue zones show proper insulation. Analysis reveals 8 major leak points.
-                </p>
-              </div>
-
-              {/* Key Findings */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-6">
-                  <h4 className="text-red-400 text-lg font-semibold mb-3">🔥 Heat Leak Zones</h4>
-                  <ul className="text-white/80 space-y-2">
-                    <li>• Window frames: 4 major leak points</li>
-                    <li>• AC unit seal: 2 thermal bridges</li>
-                    <li>• Door threshold: 1 air gap</li>
-                    <li>• Wall corners: 3 weak points</li>
-                    <li>• Total leak area: 2.3 m²</li>
-                  </ul>
-                </div>
-
-                <div className="bg-orange-500/10 border border-orange-500/20 rounded-2xl p-6">
-                  <h4 className="text-orange-400 text-lg font-semibold mb-3">⚡ HVAC System Impact</h4>
-                  <ul className="text-white/80 space-y-2">
-                    <li>• Compressor runtime: +35% overtime</li>
-                    <li>• Energy consumption: +420 kWh/month</li>
-                    <li>• System efficiency: 58% (vs 85% optimal)</li>
-                    <li>• Maintenance cycles: 2x more frequent</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Environmental Impact */}
-              <div className="bg-green-500/10 border border-green-500/20 rounded-2xl p-6">
-                <h4 className="text-green-400 text-xl font-semibold mb-4">🌍 Climate Impact Analysis</h4>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#D4FF5C] mb-2">5,040 kWh</div>
-                    <div className="text-white/70">Annual Energy Waste</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#D4FF5C] mb-2">2.6 tons</div>
-                    <div className="text-white/70">CO₂ Emissions</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#D4FF5C] mb-2">$605</div>
-                    <div className="text-white/70">Annual Cost</div>
-                  </div>
-                </div>
-                <div className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
-                  <p className="text-red-300 text-sm">
-                    <strong>Compressor Overtime Impact:</strong> Due to heat leaks, the AC compressor runs 35% longer, 
-                    consuming 420 kWh extra per month and increasing wear by 2x, leading to higher maintenance costs and reduced lifespan.
+              {/* Main Content */}
+              <div className="space-y-6">
+                {/* Problem Statement */}
+                <section className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <h3 className="flex items-center gap-3 text-white text-lg font-medium mb-2">
+                    <FiAlertCircle className="w-5 h-5 text-[#D4FF5C]" />
+                    Thermal Findings
+                  </h3>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    We analyzed the 3D model and thermal data. The room exhibits multiple significant
+                    energy leak locations leading to increased HVAC runtime and energy waste.
                   </p>
-                </div>
-              </div>
+                </section>
 
-              {/* Recommendations */}
-              <div className="bg-[#D4FF5C]/10 border border-[#D4FF5C]/20 rounded-2xl p-6">
-                <h4 className="text-[#D4FF5C] text-xl font-semibold mb-4">💡 Recommended Actions</h4>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <span className="text-[#D4FF5C] text-lg">1.</span>
-                    <div>
-                      <div className="text-white font-medium">Seal Window Frames</div>
-                      <div className="text-white/70">Caulk and weatherstrip → Save 1,680 kWh/year ($202)</div>
+                {/* Thermal Image */}
+                <section className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="flex items-center gap-2 text-white font-medium">
+                      <FiCamera className="w-5 h-5 text-[#D4FF5C]" />
+                      Thermal Imaging
+                    </h4>
+                    <div className="text-xs text-white/60">8 detected leak points</div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="w-64 h-48 rounded-lg overflow-hidden border border-white/10">
+                      <img
+                        src="/thermography-building-infratec-building-facade-04.png"
+                        alt="Thermal imaging"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <span className="text-[#D4FF5C] text-lg">2.</span>
-                    <div>
-                      <div className="text-white font-medium">Fix AC Unit Seal</div>
-                      <div className="text-white/70">Proper installation → Reduce compressor overtime by 25%</div>
-                    </div>
+                  <p className="text-white/70 text-sm text-center">
+                    Hot zones indicate thermal leakage (windows, AC seals, corners). Use targeted
+                    sealing and insulation to address the main points.
+                  </p>
+                </section>
+
+                {/* Heat Leak & HVAC Impact */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-[#3b0f0f]/85 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg">
+                    <h5 className="flex items-center gap-3 text-white font-bold mb-4 text-lg">
+                      <FiWind className="w-6 h-6 text-[#D4FF5C]" />
+                      Heat Leak Zones
+                    </h5>
+                    <ul className="space-y-3 text-white">
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Window frames:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">4 major leak points</span>
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        AC unit seal:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">2 thermal bridges</span>
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Door threshold:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">1 air gap</span>
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Wall corners:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">3 weak points</span>
+                      </li>
+                      <li className="text-center font-bold mt-4">
+                        Total leak area:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">2.3 m²</span>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <span className="text-[#D4FF5C] text-lg">3.</span>
-                    <div>
-                      <div className="text-white font-medium">Insulate Wall Corners</div>
-                      <div className="text-white/70">Spray foam insulation → Cut energy loss by 45%</div>
-                    </div>
+
+                  <div className="bg-[#4a3a0a]/85 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg">
+                    <h5 className="flex items-center gap-3 text-white font-bold mb-4 text-lg">
+                      <FiAlertCircle className="w-6 h-6 text-[#D4FF5C]" />
+                      HVAC System Impact
+                    </h5>
+                    <ul className="space-y-3 text-white">
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Compressor runtime:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">+35% overtime</span>
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Energy consumption:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">+420 kWh/month</span>
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        System efficiency:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">58%</span> (vs 85% optimal)
+                      </li>
+                      <li className="bg-white/5 border border-white/10 rounded-lg p-3">
+                        Maintenance cycles:{" "}
+                        <span className="text-[#D4FF5C] font-semibold">2× more frequent</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+
+                {/* Environmental Impact */}
+                <section className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <h4 className="flex items-center gap-3 text-white font-semibold text-lg mb-3">
+                    <FiCheckCircle className="w-5 h-5 text-[#D4FF5C]" />
+                    Environmental Impact
+                  </h4>
+                  <p className="text-white/80 text-sm mb-4">
+                    Fixing these energy leaks would save{" "}
+                    <span className="text-[#D4FF5C] font-semibold">2.6 tons CO₂</span> annually — equivalent to
+                    planting <span className="text-[#D4FF5C] font-semibold">59 trees</span> or removing{" "}
+                    <span className="text-[#D4FF5C] font-semibold">1 car</span> from the road for 1.3 years.
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <div className="text-sm text-white/70">Energy Waste</div>
+                      <div className="mt-2 text-2xl font-bold text-[#D4FF5C]">5,040 kWh</div>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <div className="text-sm text-white/70">CO₂ Emissions</div>
+                      <div className="mt-2 text-2xl font-bold text-[#D4FF5C]">2.6 t</div>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <div className="text-sm text-white/70">Annual Cost</div>
+                      <div className="mt-2 text-2xl font-bold text-[#D4FF5C]">$6050</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 bg-white/5 border border-white/10 rounded-md p-3">
+                    <p className="text-white/80 text-sm">
+                      <strong className="text-white">Compressor Overtime:</strong> Heat leaks increase compressor
+                      runtime by <span className="text-[#D4FF5C] font-semibold">~35%</span> (≈
+                      <span className="text-[#D4FF5C] font-semibold">420 kWh/mo</span>), increasing maintenance and
+                      reducing lifespan.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Recommendations */}
+                <section className="bg-white/5 border border-white/10 rounded-xl p-5">
+                  <h4 className="flex items-center gap-2 text-white font-semibold mb-3">
+                    <FiCheckCircle className="w-5 h-5 text-[#D4FF5C]" />
+                    Recommended Actions
+                  </h4>
+                  <ol className="space-y-4 text-white text-sm">
+                    <li>
+                      <strong className="text-[#D4FF5C]">1.</strong> Seal Window Frames —{" "}
+                      <span className="text-[#D4FF5C]">Save 1,680 kWh/year ($202)</span>
+                    </li>
+                    <li>
+                      <strong className="text-[#D4FF5C]">2.</strong> Fix AC Unit Seal —{" "}
+                      <span className="text-[#D4FF5C]">Reduce compressor overtime by 25%</span>
+                    </li>
+                    <li>
+                      <strong className="text-[#D4FF5C]">3.</strong> Insulate Wall Corners —{" "}
+                      <span className="text-[#D4FF5C]">Cut energy loss by 45%</span>
+                    </li>
+                  </ol>
+                </section>
               </div>
 
-              {/* Impact Summary */}
-              <div className="bg-gradient-to-r from-[#D4FF5C]/10 to-green-500/10 border border-[#D4FF5C]/20 rounded-2xl p-6 text-center">
-                <h4 className="text-[#D4FF5C] text-2xl font-bold mb-3">🌱 Environmental Impact</h4>
-                <p className="text-white/90 text-lg leading-relaxed">
-                  Fixing these energy leaks would save <span className="text-[#D4FF5C] font-bold">2.6 tons of CO₂ annually</span> — 
-                  equivalent to planting <span className="text-[#D4FF5C] font-bold">59 trees</span> or removing 
-                  <span className="text-[#D4FF5C] font-bold"> 1 car from the road</span> for 1.3 years.
-                </p>
-                <div className="mt-4 grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-[#D4FF5C]">$605</div>
-                    <div className="text-white/70 text-sm">Annual Savings</div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-[#D4FF5C]">3,360 kWh</div>
-                    <div className="text-white/70 text-sm">Energy Saved</div>
-                  </div>
-                </div>
+              {/* Close Button */}
+              <div className="mt-8 text-center">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-2 bg-[#D4FF5C] text-[#052A1F] font-medium shadow-sm hover:scale-[1.02] transition-transform"
+                >
+                  Close
+                </button>
               </div>
-            </div>
-
-            {/* Close Button */}
-            <div className="mt-8 text-center">
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="bg-[#D4FF5C] text-[#0D3028] font-inter text-lg py-3 px-8 rounded-full transition-all duration-500 hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(212,255,92,0.5)]"
-              >
-                Close Analysis
-              </button>
             </div>
           </div>
         </div>

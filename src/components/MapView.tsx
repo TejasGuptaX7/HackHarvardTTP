@@ -120,7 +120,7 @@ export default function MapView() {
                 
                 // Check if recommendations have actually changed
                 const currentRecommended = currentData.features.filter((f: any) => f.properties.recommended === true);
-                const newRecommended = newData.features.filter((f: any) => f.properties.recommended === true);
+                const newRecommended = (newData as any).features.filter((f: any) => f.properties.recommended === true);
                 
                 const currentRecommendedIds = new Set(currentRecommended.map((f: any) => f.properties.id));
                 const newRecommendedIds = new Set(newRecommended.map((f: any) => f.properties.id));
@@ -136,7 +136,7 @@ export default function MapView() {
                 }
                 
                 // Update the data source
-                source.setData(newData);
+                source.setData(newData as any);
                 console.log('✅ Map data refreshed successfully');
             }
         } catch (error) {
@@ -257,14 +257,14 @@ export default function MapView() {
                 .then(response => response.json())
                 .then(data => {
                     // Check if there are any recommended buildings
-                    const hasRecommended = data.features.some((feature: any) => 
+                    const hasRecommended = (data as any).features.some((feature: any) => 
                         feature.properties && feature.properties.recommended === true
                     );
 
                     // Add vacant buildings data source
                     map.current!.addSource("vacant-buildings", {
                         type: "geojson",
-                        data: data,
+                        data: data as any,
                     });
 
                     // Create location pin icon with specified color
@@ -634,7 +634,7 @@ export default function MapView() {
                                     throw new Error(`API Error: ${response.status} - ${errorText}`);
                                 }
 
-                                const data = await response.json();
+                                const data = await response.json() as any;
                                 console.log('Analysis completed successfully:', data);
                                 return data.analysis;
                             } catch (error) {

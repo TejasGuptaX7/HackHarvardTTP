@@ -547,7 +547,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ analysis: dynamicAnalysis, warning: `Upstream model returned ${resp.status}` }, { status: 502 });
     }
 
-    const data = await resp.json();
+    const data: any = await resp.json();
 
     // Defensive path: try to extract model text
     const candidateText =
