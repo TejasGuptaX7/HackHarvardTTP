@@ -9,12 +9,17 @@
     "db:init": "wrangler d1 execute eco_spirit_chat --remote --file=./schema.sql",
     "db:local": "wrangler d1 execute eco_spirit_chat --local --file=./schema.sql"
   },
-  "keywords": ["cloudflare", "workers", "ai", "geojson"],
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "ai",
+    "geojson"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241127.0",
     "typescript": "^5.7.2",
-    "wrangler": "^3.96.0"
+    "wrangler": "^3.114.14"
   }
 }

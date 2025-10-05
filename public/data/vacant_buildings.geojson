@@ -26,7 +26,9 @@
         "Leasing Contact": "Atlantic Retail, Scott Black, 617.369.5902 sblack@atlanticretail.com, Sophie Morrill, 617.369.5926, smorrill@atlanticretail.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -54,7 +56,9 @@
         "Leasing Contact": "Vast Capital Management, (617) 491-4431",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/alewifeandfreshpond/174_Alewife_Brook_Parkway_01.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -82,7 +86,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -110,7 +116,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -138,7 +146,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -166,7 +176,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -194,7 +206,9 @@
         "Leasing Contact": "(781) 890-5855",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -222,7 +236,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -250,7 +266,9 @@
         "Leasing Contact": "Beth Spiegel, Specialty Leasing Manager, 617.299.2574, BSpiegel@NEDevelopment.com",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/100_Cambridgeside_Place_60_First_Street_20240212.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -278,7 +296,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -306,7 +326,9 @@
         "Leasing Contact": "Boston Urban Properties, info@bostonurban.com, 617-274-4900",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -334,7 +356,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -362,7 +386,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "With a Green Score of 69 and proximity to East Cambridge's residential areas, this location offers a great balance of foot traffic and sustainability.",
+        "recommendationScore": 88
       }
     },
     {
@@ -390,7 +416,9 @@
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -418,7 +446,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -446,7 +476,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -474,7 +506,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1906_Mass_Ave_20240209_1.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -502,7 +536,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -530,7 +566,9 @@
         "Leasing Contact": "ABG Realty, 307 Cambridge Street, Cambridge, MA 02141, 617.492.9900",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -558,7 +596,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -586,7 +626,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "High foot traffic, proximity to Harvard University, and a Green Score of 67 make this location ideal for a boba shop.",
+        "recommendationScore": 92
       }
     },
     {
@@ -614,7 +656,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -642,7 +686,9 @@
         "Leasing Contact": "Conviser Property Group, ADAM CONVISERADAM@CONVISERPG.COM, MOBILE: (617) 593-1700",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -670,7 +716,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/425_Mass_Ave_Central_20240222.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -698,7 +746,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/305_Webster_20240212_4.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -726,7 +776,9 @@
         "Leasing Contact": "Not Applicable",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2326_Mass_Ave_20240209_4.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -754,7 +806,9 @@
         "Leasing Contact": "Eastern Retail, Joe Morrison, jmorrison@easternretail.com, (617) 630-1180",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/291-293_Cambridge_Street_20240212_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -782,7 +836,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "This spot in East Cambridge has a Green Score of 70 and is close to the Lechmere T stop, making it an ideal location for a boba shop with high foot traffic.",
+        "recommendationScore": 87
       }
     },
     {
@@ -810,7 +866,9 @@
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -838,7 +896,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -866,7 +926,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -894,7 +956,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -922,7 +986,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -950,7 +1016,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/571-577_Mass_Ave_20240222_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -978,7 +1046,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/obshillandhuronvill/244_Huron_240205_031.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1006,7 +1076,9 @@
         "Leasing Contact": "Gibson Sotheby's International Realty Brokers, Michael Hartwick, 617-371-7276",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1034,7 +1106,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1062,7 +1136,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/10_Church_20240220.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1090,7 +1166,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1118,7 +1196,9 @@
         "Leasing Contact": "Acorn Property Management LLC, (617) 433-9700",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1146,7 +1226,9 @@
         "Leasing Contact": "Peter Dominski, pdominski@anchorlinepartners.com?",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1174,7 +1256,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/657_Cambridge_Street_20240212_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1202,7 +1286,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1230,7 +1316,9 @@
         "Leasing Contact": "Beck Dangler, District Advisors, 315.723.8511, beck@districtadvisors.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1258,7 +1346,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1286,7 +1376,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1314,7 +1406,9 @@
         "Leasing Contact": "Christopher Scott, 781-718-3260, cscott@lpc.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1342,7 +1436,9 @@
         "Leasing Contact": "Godino and Company, 617-965-4200, godinoco.com",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1248_Cambridge_Street_20240212_3.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1370,7 +1466,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/250_Water_Street_20240212_1.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1398,7 +1496,9 @@
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1426,7 +1526,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "Located in Kendall Square, this spot has high foot traffic, a Green Score of 77, and proximity to tech companies and startups.",
+        "recommendationScore": 92
       }
     },
     {
@@ -1454,7 +1556,9 @@
         "Leasing Contact": "Boston Urban Partners, Patrick Conly, 617-274-4900",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/675_Mass_Ave_Central_20240222_1.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1482,7 +1586,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1510,7 +1616,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1538,7 +1646,9 @@
         "Leasing Contact": "BA Property & Lifestyle Advisors 451 Grove St Worcester, MA 01605 508-905-6073",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2329_Mass_Ave_20240209.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1566,7 +1676,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1594,7 +1706,9 @@
         "Leasing Contact": "Wilder, Deb Di Meo, 617-309-7231",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1622,7 +1736,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/515_Mass_Ave_Central_20240222_1.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1650,7 +1766,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1678,7 +1796,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1706,7 +1826,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1734,7 +1856,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1762,7 +1886,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1790,7 +1916,9 @@
         "Leasing Contact": "JR Associates, (617) 913-4259",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1818,7 +1946,9 @@
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1846,7 +1976,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1874,7 +2006,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1902,7 +2036,9 @@
         "Leasing Contact": "Amy Daniels, Leasing Representative, (516) 869-7195, adaniels@kimcorealty.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1930,7 +2066,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/26_Brattle_20240220.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1958,7 +2096,9 @@
         "Leasing Contact": "District Real Estate Advisors. Contact: 617-943-2272",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/904_Mass_Ave_Central_20240222.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -1986,7 +2126,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2014,7 +2156,9 @@
         "Leasing Contact": "BEN RAVELSON, 617.239.3646, BRAVELSON@ATLANTICRETAIL.COM, ROBIN ESTUS, 617.239.3604 RESTUS@ATLANTICRETAIL.COM",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2042,7 +2186,9 @@
         "Leasing Contact": "617-547-7031",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1691_Mass_Ave_Lower_Mass_Ave20240222.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2070,7 +2216,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2098,7 +2246,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2126,7 +2276,9 @@
         "Leasing Contact": "Ann Ehrhart, ann@everstreet.co, (617) 895-9789",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2154,7 +2306,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2182,7 +2336,9 @@
         "Leasing Contact": "Alden Bush, 617-863-8419, alden.bush@nmrk.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2210,7 +2366,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2238,7 +2396,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2266,7 +2426,9 @@
         "Leasing Contact": "Roy Papalia, (617) 306-7797",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/4_Hudson_Lower_Mass_Ave_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2294,7 +2456,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/inmansquare/1095_Camb%20ridge_Street_20240212_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "In the heart of Central Square, this location has high foot traffic, a Green Score of 71, and a vibrant atmosphere perfect for a boba shop.",
+        "recommendationScore": 90
       }
     },
     {
@@ -2322,7 +2486,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/2094_Mass_Ave_20240209_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2350,7 +2516,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2378,7 +2546,9 @@
         "Leasing Contact": "Coelho Realty Group 617-764-4342",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/eastcambridge/484_490_Cambridge_Street_20240212_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2406,7 +2576,9 @@
         "Leasing Contact": "Newmark, Greg Covey 617-863-8459",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/harvardsquare/4448brattle_harvard.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2434,7 +2606,9 @@
         "Leasing Contact": "Graffito SP, leasing@graffito.com, 617-401-2872",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2462,7 +2636,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/350_Mass_Ave_Central_20240222_2.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2490,7 +2666,9 @@
         "Leasing Contact": "Roy Papalia, (617) 484-7474",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/lowermassaveporternmassave/1925_Mass_Ave_20240209_1.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2518,7 +2696,9 @@
         "Leasing Contact": "Amy Daniels, Leasing Representative, (516) 869-7195, adaniels@kimcorealty.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2546,7 +2726,9 @@
         "Leasing Contact": "Boston Realty Advisors, Whitney Gallivan, 617-850-9612, wgallivan@bradvisors.com",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2574,7 +2756,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": "https://www.cambridgema.gov/-/media/Images/CDD/EconDev/vacantstorefrontdatabase/march2024/centralsquare/799_Main_Street_20240222_3.jpg",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2602,7 +2786,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2630,7 +2816,9 @@
         "Leasing Contact": "Adam Conviser, Conviser Property Group, 781-320-0600 adam@conviserpg.com",
         "Dataset Date": "September 2025",
         "Image": "https://cityofcambridge.sharepoint.com/:i:/r/sites/CDDDocumentCenter/Shared%20Documents/Economic%20Opportunities%20%26%20Development/Retail%20Plan%20Implementation/07%20Vacant%20Storefronts/08%20Vacant%20Storefront%20Database(s)/Vacant%20Storefront%20Photos/2025%20March/117%20first%20st.jpg?csf=1&web=1&e=5nft6f",
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2658,7 +2846,9 @@
         "Leasing Contact": "Unknown",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     },
     {
@@ -2686,7 +2876,9 @@
         "Leasing Contact": "617-547-6124",
         "Dataset Date": "September 2025",
         "Image": null,
-        "recommended": false
+        "recommended": false,
+        "recommendationReason": "",
+        "recommendationScore": null
       }
     }
   ]

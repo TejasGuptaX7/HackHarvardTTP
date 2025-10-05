@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map } from "mapbox-gl";
 import { createRoot } from "react-dom/client";
+import { useMap } from "../contexts/MapContext";
 import { 
     MdLocationOn, 
     MdEco, 
@@ -82,6 +83,135 @@ const createIconElement = (iconName: string, size: number = 20) => {
 export default function MapView() {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<Map | null>(null);
+    const refreshInterval = useRef<NodeJS.Timeout | null>(null);
+    const { setNavigateToBuilding } = useMap();
+
+    // Helper function to clean up all popups
+    const cleanupPopups = () => {
+        const existingLeftPopup = document.getElementById('left-side-popup');
+        if (existingLeftPopup) {
+            existingLeftPopup.remove();
+        }
+        
+        const existingBasicPopup = document.getElementById('basic-popup');
+        if (existingBasicPopup) {
+            existingBasicPopup.remove();
+        }
+        
+        // Remove any backdrop elements
+        const backdrops = document.querySelectorAll('[style*="position: fixed"][style*="background: rgba(0, 0, 0, 0.3)"]');
+        backdrops.forEach(backdrop => backdrop.remove());
+    };
+
+    // Function to refresh GeoJSON data and update map
+    const refreshMapData = async () => {
+        if (!map.current) return;
+        
+        try {
+            console.log('🔄 Refreshing map data...');
+            
+            const response = await fetch("/data/vacant_buildings.geojson");
+            const newData = await response.json();
+            
+            // Get current data to compare
+            const source = map.current.getSource("vacant-buildings") as mapboxgl.GeoJSONSource;
+            if (source) {
+                const currentData = source._data as any;
+                
+                // Check if recommendations have actually changed
+                const currentRecommended = currentData.features.filter((f: any) => f.properties.recommended === true);
+                const newRecommended = newData.features.filter((f: any) => f.properties.recommended === true);
+                
+                const currentRecommendedIds = new Set(currentRecommended.map((f: any) => f.properties.id));
+                const newRecommendedIds = new Set(newRecommended.map((f: any) => f.properties.id));
+                
+                const recommendationsChanged = currentRecommendedIds.size !== newRecommendedIds.size || 
+                    [...currentRecommendedIds].some(id => !newRecommendedIds.has(id));
+                
+                if (recommendationsChanged) {
+                    console.log('📊 Recommendations changed - clearing popups');
+                    cleanupPopups();
+                } else {
+                    console.log('📊 No changes detected - keeping popups');
+                }
+                
+                // Update the data source
+                source.setData(newData);
+                console.log('✅ Map data refreshed successfully');
+            }
+        } catch (error) {
+            console.error('❌ Error refreshing map data:', error);
+        }
+    };
+
+    // Function to navigate to a specific building
+    const navigateToBuilding = (buildingId: number) => {
+        if (!map.current) return;
+        
+        try {
+            // Get the current data source
+            const source = map.current.getSource("vacant-buildings") as mapboxgl.GeoJSONSource;
+            if (!source) return;
+            
+            // Find the building with the specified ID
+            const data = source._data as any;
+            const building = data.features.find((feature: any) => feature.properties.id === buildingId);
+            
+            if (building && building.geometry.coordinates) {
+                const [lng, lat] = building.geometry.coordinates;
+                
+                // Fly to the building location
+                map.current.flyTo({
+                    center: [lng, lat],
+                    zoom: 18,
+                    duration: 2000,
+                    essential: true
+                });
+                
+                // Add a temporary highlight effect
+                setTimeout(() => {
+                    // Create a pulsing effect by temporarily changing the icon size
+                    const originalLayout = map.current!.getLayoutProperty('vacant-locations', 'icon-size');
+                    
+                    // Set a larger size for the specific building
+                    map.current!.setFilter('vacant-locations', [
+                        'case',
+                        ['==', ['get', 'id'], buildingId],
+                        ['literal', true],
+                        ['literal', true]
+                    ]);
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        map.current!.setFilter('vacant-locations', null);
+                    }, 3000);
+                }, 500);
+                
+                console.log(`🎯 Navigated to building ${buildingId} at ${building.properties.Address}`);
+            } else {
+                console.warn(`⚠️ Building with ID ${buildingId} not found`);
+            }
+        } catch (error) {
+            console.error('❌ Error navigating to building:', error);
+        }
+    };
+
+    // Register navigation function with context
+    useEffect(() => {
+        setNavigateToBuilding(navigateToBuilding);
+    }, [setNavigateToBuilding]);
+
+    // Set up automatic refresh polling
+    useEffect(() => {
+        // Poll for changes every 5 seconds
+        refreshInterval.current = setInterval(refreshMapData, 5000);
+        
+        return () => {
+            if (refreshInterval.current) {
+                clearInterval(refreshInterval.current);
+            }
+        };
+    }, []);
 
     useEffect(() => {
         if (!mapContainer.current) return;
@@ -210,6 +340,145 @@ export default function MapView() {
                     createLocationPin('#dc2626', 'red-location-pin'); // Red for non-recommended
                     createLocationPin('#16a34a', 'green-location-pin'); // Green for recommended
 
+                    // Function to show basic popup for red markers
+                    const showBasicPopup = (props: Record<string, any>, lngLat: any) => {
+                        // Remove existing popups if any
+                        cleanupPopups();
+
+                        // Create basic popup
+                        const popup = document.createElement('div');
+                        popup.id = 'basic-popup';
+                        popup.style.cssText = `
+                            position: fixed;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background: white;
+                            border-radius: 12px;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                            padding: 24px;
+                            max-width: 400px;
+                            width: 90%;
+                            max-height: 80vh;
+                            overflow-y: auto;
+                            z-index: 1000;
+                            border: 1px solid #e5e7eb;
+                        `;
+
+                        // Create popup content
+                        const popupContent = document.createElement('div');
+                        popupContent.style.cssText = `
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                        `;
+
+                        // Title
+                        const title = document.createElement('h3');
+                        title.style.cssText = `
+                            margin: 0 0 16px 0;
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: #1f2937;
+                            border-bottom: 2px solid #dc2626;
+                            padding-bottom: 8px;
+                        `;
+                        title.textContent = 'Building Details';
+
+                        // Building information
+                        const details = document.createElement('div');
+                        details.style.cssText = `
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        `;
+
+                        // Helper function to create detail row
+                        const createDetailRow = (label: string, value: string) => {
+                            const row = document.createElement('div');
+                            row.style.cssText = `
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                padding: 8px 0;
+                                border-bottom: 1px solid #f3f4f6;
+                            `;
+                            
+                            const labelEl = document.createElement('span');
+                            labelEl.style.cssText = `
+                                font-weight: 500;
+                                color: #6b7280;
+                                min-width: 120px;
+                                flex-shrink: 0;
+                            `;
+                            labelEl.textContent = label + ':';
+                            
+                            const valueEl = document.createElement('span');
+                            valueEl.style.cssText = `
+                                color: #1f2937;
+                                text-align: right;
+                                flex: 1;
+                                margin-left: 12px;
+                            `;
+                            valueEl.textContent = value || 'N/A';
+                            
+                            row.appendChild(labelEl);
+                            row.appendChild(valueEl);
+                            return row;
+                        };
+
+                        // Add building details
+                        details.appendChild(createDetailRow('Address', props.Address || ''));
+                        details.appendChild(createDetailRow('District', props['Commercial District'] || ''));
+                        details.appendChild(createDetailRow('City', props.City || ''));
+                        details.appendChild(createDetailRow('Square Footage', props['Square Footage'] || ''));
+                        details.appendChild(createDetailRow('Vacancy Date', props['Vacancy Date'] || ''));
+                        details.appendChild(createDetailRow('Length of Vacancy', props['Length of Vacancy'] || ''));
+                        details.appendChild(createDetailRow('Ownership Type', props['Ownership Type'] || ''));
+                        details.appendChild(createDetailRow('Former Tenant', props['Former Tenant'] || ''));
+                        details.appendChild(createDetailRow('Leasing Activity', props['Leasing Activity'] || ''));
+
+                        // Close button
+                        const closeButton = document.createElement('button');
+                        closeButton.style.cssText = `
+                            position: absolute;
+                            top: 12px;
+                            right: 12px;
+                            background: none;
+                            border: none;
+                            font-size: 24px;
+                            color: #6b7280;
+                            cursor: pointer;
+                            padding: 4px;
+                            border-radius: 4px;
+                            transition: background-color 0.2s;
+                        `;
+                        closeButton.innerHTML = '×';
+                        closeButton.onmouseover = () => closeButton.style.backgroundColor = '#f3f4f6';
+                        closeButton.onmouseout = () => closeButton.style.backgroundColor = 'transparent';
+                        closeButton.onclick = () => cleanupPopups();
+
+                        // Assemble popup
+                        popupContent.appendChild(title);
+                        popupContent.appendChild(details);
+                        popup.appendChild(closeButton);
+                        popup.appendChild(popupContent);
+
+                        // Add backdrop
+                        const backdrop = document.createElement('div');
+                        backdrop.style.cssText = `
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100vw;
+                            height: 100vh;
+                            background: rgba(0, 0, 0, 0.3);
+                            z-index: 999;
+                        `;
+                        backdrop.onclick = () => cleanupPopups();
+
+                        document.body.appendChild(backdrop);
+                        document.body.appendChild(popup);
+                    };
+
                     // Add click handler for location markers
                     map.current!.on("click", "vacant-locations", (e) => {
                         const feature = e.features?.[0];
@@ -225,11 +494,17 @@ export default function MapView() {
                             essential: true
                         });
 
-                        // Remove existing popup if any
-                        const existingPopup = document.getElementById('left-side-popup');
-                        if (existingPopup) {
-                            existingPopup.remove();
+                        // Show different popups based on recommendation status
+                        if (!props.recommended) {
+                            console.log('🔴 Red marker clicked - showing basic popup');
+                            showBasicPopup(props, e.lngLat);
+                            return;
                         }
+
+                        console.log('✅ Green marker clicked - showing popup with 3D models');
+
+                        // Remove existing popups if any
+                        cleanupPopups();
 
                         // Create fixed popup on the left side
                         const popup = document.createElement('div');
@@ -1779,8 +2054,8 @@ export default function MapView() {
                         document.body.appendChild(popup);
                     });
 
-                    // Change cursor on hover
-                    map.current!.on("mouseenter", "vacant-locations", () => {
+                    // Change cursor on hover - for all buildings (both have popups now)
+                    map.current!.on("mouseenter", "vacant-locations", (e) => {
                         map.current!.getCanvas().style.cursor = "pointer";
                     });
 
@@ -1794,6 +2069,15 @@ export default function MapView() {
 
 
         });
+    }, []);
+
+    // Cleanup on unmount
+    useEffect(() => {
+        return () => {
+            if (refreshInterval.current) {
+                clearInterval(refreshInterval.current);
+            }
+        };
     }, []);
 
     return (

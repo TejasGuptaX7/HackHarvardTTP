@@ -1,40 +1,6 @@
 {
-  "timestamp": "2025-10-05T00:48:15.576Z",
+  "timestamp": "2025-10-05T01:54:15.709Z",
   "recommendations": [
-    {
-      "buildingId": 14,
-      "reason": "High walkability and transit access in Harvard Square",
-      "score": 88,
-      "address": "1430 Massachusetts Avenue, Space A",
-      "district": "Harvard Square"
-    },
-    {
-      "buildingId": 51,
-      "reason": "Central location in Kendall Square with good foot traffic",
-      "score": 80,
-      "address": "One Kendall Square Building 100",
-      "district": "Kendall Square"
-    },
-    {
-      "buildingId": 43,
-      "reason": "Busy area in Harvard Square with high demand for dining options",
-      "score": 89,
-      "address": "1308 Massachusetts Avenue",
-      "district": "Harvard Square"
-    },
-    {
-      "buildingId": 93,
-      "reason": "Kendall Square location with a mix of office and residential spaces",
-      "score": 78,
-      "address": "One Kendall Square Building 300",
-      "district": "Kendall Square"
-    },
-    {
-      "buildingId": 2,
-      "reason": "Alewife location with high foot traffic and good transit access",
-      "score": 83,
-      "address": "174 Alewife Brook Parkway",
-      "district": "Alewife"
-    }
+    
   ]
 }

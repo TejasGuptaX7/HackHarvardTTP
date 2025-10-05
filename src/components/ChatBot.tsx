@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSend, FiChevronDown, FiX, FiMapPin } from "react-icons/fi";
+import { useMap } from "../contexts/MapContext";
 
 interface Recommendation {
   buildingId: number;
@@ -31,6 +32,7 @@ interface ChatBotProps {
 
 export default function ChatBot({ onRecommendationsUpdate }: ChatBotProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { navigateToBuilding } = useMap();
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
@@ -205,9 +207,11 @@ export default function ChatBot({ onRecommendationsUpdate }: ChatBotProps) {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         whileHover={{ scale: 1.03 }}
-                        className={`mt-2 border rounded-xl p-3 transition-all ${rec.recommended
-                          ? "bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-300"
-                          : "bg-gray-50 border-gray-200"
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => navigateToBuilding(rec.buildingId)}
+                        className={`mt-2 border rounded-xl p-3 transition-all cursor-pointer ${rec.recommended
+                          ? "bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-300 hover:from-emerald-100 hover:to-green-100"
+                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
                           }`}
                       >
                         <div className="flex justify-between items-start">
